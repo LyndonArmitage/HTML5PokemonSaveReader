@@ -70,6 +70,16 @@ function parseSav(data) {
 	function getTrainerName() {
 		var offset = 0x2598; // trainer name offset
 		var size = 8;
+		return getTextString(offset, size);
+	}
+
+	function getRivalName() {
+		var offset = 0x25F6; // rival name offset
+		var size = 8;
+		return getTextString(offset, size);
+	}
+
+	function getTextString(offset, size) {
 		var output = "";
 		for(var i = 0; i < size; i ++) {
 			var code = data.charCodeAt(offset + i);
@@ -110,7 +120,8 @@ function parseSav(data) {
 		return charMap[hex];
 	}
 
-	alert(getTrainerName());
+	alert("Trainer name: " + getTrainerName());
+	alert("Rival name: " + getRivalName());
 }
 
 /**
