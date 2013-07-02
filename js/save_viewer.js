@@ -37,6 +37,18 @@ function supportsFileAPI() {
 	}
 }
 
+function readFile(savefile) {
+	var reader = new FileReader();
+
+	reader.onload = (function(theFile) {
+		return function(e) {
+			$("#container").append("<div id='saveName'>"+ theFile.name +" loaded</div>");
+			parseSav(e.target.result);
+		};
+	})(savefile);
+	reader.readAsBinaryString(savefile);
+}
+
 function loadFile(evt) {
 	evt = evt.originalEvent || evt;
 	alert(evt);
@@ -45,10 +57,26 @@ function loadFile(evt) {
 	// save files are 32kb large and end in .sav
 	if(savefile != null && savefile.size >= 32768 && savefile.name.endsWith(".sav")) {
 		alert("Yay a valid save file!");
+		readFile(savefile);
 	}
 	else {
 		alert("That wasn't a valid save file");
 	}
+}
+
+function parseSav(data) {
+	// lets test getting the trainer name data
+	// Currently just output the hex, it works so next step is to translate into text
+	function getTrainerName() {
+		var offset = 0x2598; // trainer name offset
+		var size = 8;
+		var output = "";
+		for(var i = 0; i < size; i ++) {
+			output += data.charCodeAt(offset + i).toString(16) + " ";
+		}
+		return output;
+	}
+	alert(getTrainerName());
 }
 
 /**
