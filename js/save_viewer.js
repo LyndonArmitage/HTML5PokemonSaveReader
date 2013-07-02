@@ -6,6 +6,10 @@ This will make use of HTML5's File API so will not work in older browsers.
 
 */
 
+$(document).ready(function() {
+	loadEvent();
+});
+
 function loadEvent() {
 	var container = document.getElementById("container");
 	if(!supportsFileAPI()) {
@@ -13,6 +17,7 @@ function loadEvent() {
 	}
 	else {
 		// We support HTML5 File API so let's get cooking.
+		alert("Yay File API Support");
 	}
 }
 
