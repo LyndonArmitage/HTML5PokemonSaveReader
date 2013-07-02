@@ -11,9 +11,9 @@ $(document).ready(function() {
 });
 
 function loadEvent() {
-	var container = document.getElementById("container");
+	var $container = $("#container");
 	if(!supportsFileAPI()) {
-		container.innerHTML = "Your browser does not support HTML5's File API. Please update to a better browser.";
+		$container.text("Your browser does not support HTML5's File API. Please update to a better browser.");
 	}
 	else {
 		// We support HTML5 File API so let's get cooking.
