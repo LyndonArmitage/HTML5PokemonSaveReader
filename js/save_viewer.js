@@ -174,7 +174,12 @@ function parseSav(data) {
 			0x1E : "Repel", 0x1F : "Old Amber", 0x20 : "Fire Stone", 0x21 : "Thunderstone", 0x22 : "Water Stone",
 			0x23 : "HP Up", 0x24 : "Protein", 0x25 : "Iron", 0x26 : "Carbos", 0x27 : "Calcium",
 			0x28 : "Rare Candy", 0x29 : "Dome Fossil", 0x2A : "Helix Fossil", 0x2B : "Secret Key", 0x2C : "?????",
-			0x2D : "Bike Voucher"
+			0x2D : "Bike Voucher", 0x2E : "X Accuracy", 0x2F : "Leaf Stone", 0x30 : "Card Key", 0x31 : "Nugget",
+			0x32 : "PP Up", 0x33 : "Poké Doll", 0x34 : "Full Heal", 0x35 : "Revive", 0x36 : "Max Revive",
+			0x37 : "Guard Spec.", 0x38 : "Super Repel", 0x39 : "Max Repel", 0x3A : "Dire Hit", 0x3B : "Coin",
+			0x3C : "Fresh Water", 0x3D : "Soda Pop", 0x3E : "Lemonade", 0x3F : "S.S. Ticket", 0x40 : "Gold Teeth",
+			0x41 : "X Attack", 0x42 : "X Defend", 0x43 : "X Speed", 0x44 : "X Special", 0x45 : "Coin Case",
+			0x46 : "Oak's Parcel"
 
 		};
 		return itemMap[hex];
