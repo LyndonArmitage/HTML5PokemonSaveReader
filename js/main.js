@@ -56,20 +56,23 @@ function readFile(savefile) {
 						"<li><b>Trainer ID:</b> " + results.trainerID + "</li>"+
 						"<li><b>Rival Name:</b> " + results.rivalName + "</li>"+
 						"<li><b>Time Played:</b> " + results.timePlayed.hours +":"+ results.timePlayed.minutes + ":" + results.timePlayed.seconds +"</li>";
-				var items = results.pocketItemList;
-				resultsContents += "<li><b>Pocket Items: </b>";
-				if(items.count > 0) {
-					var html = "<ul>";
-					for(var i = 0; i < items.count; i ++) {
-						var item = items.items[i];
-						html += "<li><b>"+item.name+"</b> x"+item.count+"</li>";
+
+				function addItemList(label, items) {
+					resultsContents += "<li><b>"+label+": </b>";
+					if(items.count > 0) {
+						var html = "<ul>";
+						for(var i = 0; i < items.count; i ++) {
+							var item = items.items[i];
+							html += "<li><b>"+item.name+"</b> x"+item.count+"</li>";
+						}
+						html +="</ul>";
+						resultsContents += html;
 					}
-					html +="</ul>";
-
-					resultsContents += html;
-
+					resultsContents += "</li>";
 				}
-				resultsContents += "</li>";
+
+				addItemList("Pocket Items", results.pocketItemList);
+				addItemList("PC Items", results.PCItemList);
 				resultsContents += "</ul>";
 				$("#outputSection").append(resultsContents);
 
