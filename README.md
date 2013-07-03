@@ -9,7 +9,13 @@ Made for fun, and educational purposes only.
 ## Current Version: ##
 
 Currently in the very early stages of development.
-Can currently open a .sav file and read out the Trainer name and Rival name.
+Can currently open a .sav file and read the following:
+* Trainer Name
+* Rival Name
+* Trainer ID
+* Time Played
+* Items in Pocket
+* items in PC
 
 ## Other: ##
 
