@@ -10,10 +10,13 @@ function loadEvent() {
 	}
 	else {
 		// We support HTML5 File API so let's get cooking.
-		alert("Yay File API Support");
-		$container.html("<div id='inputLabel'>Save File:</div><input type='file' id='fileInput' name='savefile' />");
+		$container.html("<div id='inputLabel'>Select Save File</div><input type='file' id='fileInput' name='savefile' style='display: none'/>");
 		var $fileIn = $container.find("#fileInput");
 		$fileIn.bind("change", loadFile);
+		var $label = $container.find("#inputLabel");
+		$label.bind("click", function() {
+			$fileIn.click();
+		})
 	}
 }
 

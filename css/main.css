@@ -1,6 +1,26 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
 #container {
 	width: 800px;
 	height: 600px;
 	margin: 0 auto;
 	border: #000000 solid 1px;
+}
+
+#inputLabel {
+	margin: 0 auto;
+	width: 200px;
+	height: 100px;
+	border: #000000 outset 2px;
+	text-align: center;
+	line-height: 100px;
+	border-radius: 20px;
+	background: red;
+	cursor: pointer;
+}
+
+#inputLabel:active {
+	border: #000000 inset 2px;
 }
