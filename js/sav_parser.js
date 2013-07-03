@@ -129,8 +129,8 @@ function parseSav(data) {
 
 	function getItemNameFromHexIndex(hex) {
 		var itemMap = {
-			0x00 : "Nothing", 0x01 : "Master Ball", 0x02 : "Ultra Ball", 0x03 : "Great Ball", 0x04 : "Poké Ball",
-			0x05 : "Town Map", 0x06 : "Bicycle", 0x07 : "?????", 0x08 : "Safari Ball", 0x09 : "Pokédex",
+			0x00 : "Nothing", 0x01 : "Master Ball", 0x02 : "Ultra Ball", 0x03 : "Great Ball", 0x04 : "Pok&#233; Ball",
+			0x05 : "Town Map", 0x06 : "Bicycle", 0x07 : "?????", 0x08 : "Safari Ball", 0x09 : "Pok&#233;dex",
 			0x0A : "Moon Stone", 0x0B : "Antidote", 0x0C : "Burn Heal", 0x0D : "Ice Heal", 0x0E : "Awakening",
 			0x0F : "Parlyz Heal", 0x10 : "Full Restore", 0x11 : "Max Potion", 0x12 : "Hyper Potion", 0x13 : "Super Potion",
 			0x14 : "Potion", 0x15 : "BoulderBadge", 0x16 : "CascadeBadge", 0x17 : "ThunderBadge", 0x18 : "RainbowBadge",
@@ -139,11 +139,11 @@ function parseSav(data) {
 			0x23 : "HP Up", 0x24 : "Protein", 0x25 : "Iron", 0x26 : "Carbos", 0x27 : "Calcium",
 			0x28 : "Rare Candy", 0x29 : "Dome Fossil", 0x2A : "Helix Fossil", 0x2B : "Secret Key", 0x2C : "?????",
 			0x2D : "Bike Voucher", 0x2E : "X Accuracy", 0x2F : "Leaf Stone", 0x30 : "Card Key", 0x31 : "Nugget",
-			0x32 : "PP Up", 0x33 : "Poké Doll", 0x34 : "Full Heal", 0x35 : "Revive", 0x36 : "Max Revive",
+			0x32 : "PP Up", 0x33 : "Pok&#233; Doll", 0x34 : "Full Heal", 0x35 : "Revive", 0x36 : "Max Revive",
 			0x37 : "Guard Spec.", 0x38 : "Super Repel", 0x39 : "Max Repel", 0x3A : "Dire Hit", 0x3B : "Coin",
 			0x3C : "Fresh Water", 0x3D : "Soda Pop", 0x3E : "Lemonade", 0x3F : "S.S. Ticket", 0x40 : "Gold Teeth",
 			0x41 : "X Attack", 0x42 : "X Defend", 0x43 : "X Speed", 0x44 : "X Special", 0x45 : "Coin Case",
-			0x46 : "Oak's Parcel", 0x47 : "Itemfinder", 0x48 : "Silph Scope", 0x49 : "Poké Flute", 0x4A : "Lift Key",
+			0x46 : "Oak's Parcel", 0x47 : "Itemfinder", 0x48 : "Silph Scope", 0x49 : "Pok&#233; Flute", 0x4A : "Lift Key",
 			0x4B : "Exp. All", 0x4C : "Old Rod", 0x4D : "Good Rod", 0x4E : "Super Rod", 0x4F : "PP Up",
 			0x50 : "Ether", 0x51 : "Max Ether", 0x52 : "Elixir", 0x53 : "Max Elixir"
 		};
