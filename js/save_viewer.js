@@ -179,9 +179,20 @@ function parseSav(data) {
 			0x37 : "Guard Spec.", 0x38 : "Super Repel", 0x39 : "Max Repel", 0x3A : "Dire Hit", 0x3B : "Coin",
 			0x3C : "Fresh Water", 0x3D : "Soda Pop", 0x3E : "Lemonade", 0x3F : "S.S. Ticket", 0x40 : "Gold Teeth",
 			0x41 : "X Attack", 0x42 : "X Defend", 0x43 : "X Speed", 0x44 : "X Special", 0x45 : "Coin Case",
-			0x46 : "Oak's Parcel"
-
+			0x46 : "Oak's Parcel", 0x47 : "Itemfinder", 0x48 : "Silph Scope", 0x49 : "Poké Flute", 0x4A : "Lift Key",
+			0x4B : "Exp. All", 0x4C : "Old Rod", 0x4D : "Good Rod", 0x4E : "Super Rod", 0x4F : "PP Up",
+			0x50 : "Ether", 0x51 : "Max Ether", 0x52 : "Elixir", 0x53 : "Max Elixir"
 		};
+		// Add all 5 of the HMs
+		for(var i = 0; i < 5; i ++) {
+			itemMap[0xC4+i] = "HM0" + (1+i);
+		}
+		// Add all 55 og the TMs
+		for(var i = 0; i < 55; i ++) {
+			var num = (1+i);
+			if(num < 10) num = "0" + num;
+			itemMap[0xC9+i] = "TM" + num;
+		}
 		return itemMap[hex];
 	}
 
