@@ -93,13 +93,20 @@ function parseSav(data) {
 
 	function getPocketItemList() {
 		// Can hold 20 items making the size 42 because: Capacity * 2 + 2 = 42
+		return getItemList(0x25C9, 20);
+	}
+
+	function getPCItemList() {
+		// Can hold 50 items making the size 102 because: Capacity * 2 + 2 = 102
+		// Offset seems to be 0x27E6 not 0x27E7 as said on bulbapedia
+		return getItemList(0x27E6, 50);
+	}
+
+	function getItemList(offset, maxSize) {
 
 		// Two extra bytes:
 		// The byte at offset 0x00 is the total Count of different items in the list
 		// The byte following the last item entry, according to Count, must always be a terminator, which is byte value 0xFF.
-
-		var offset = 0x25C9;
-//		var size = 42; // total byte size
 
 		var obj = {
 			count : hex2int(offset, 1),
@@ -108,7 +115,7 @@ function parseSav(data) {
 
 		offset ++;
 		// Each entry is 2 bytes large, first byte is the Count of that item, second is it's Index
-		for(var i = 0; i < obj.count; i ++) {
+		for(var i = 0; i < obj.count && i < maxSize; i ++) {
 			var itemIndex = hex2int(offset+(i*2), 1);
 			var itemCount = hex2int(offset+(i*2)+1, 1);
 			var name = getItemNameFromHexIndex(data.charCodeAt(offset+(i*2)));
@@ -188,7 +195,7 @@ function parseSav(data) {
 			itemMap[0xC4+i] = "HM0" + (1+i);
 		}
 		// Add all 55 og the TMs
-		for(var i = 0; i < 55; i ++) {
+		for(i = 0; i < 55; i ++) {
 			var num = (1+i);
 			if(num < 10) num = "0" + num;
 			itemMap[0xC9+i] = "TM" + num;
@@ -211,7 +218,8 @@ function parseSav(data) {
 		rivalName: getRivalName(),
 		trainerID: getTrainerID(),
 		timePlayed : getTimePlayed(),
-		pocketItemList : getPocketItemList()
+		pocketItemList : getPocketItemList(),
+		PCItemList : getPCItemList()
 	};
 }
 
