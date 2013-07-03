@@ -38,7 +38,8 @@ function readFile(savefile) {
 	reader.onload = (function(theFile) {
 		return function(e) {
 			$("#container").append("<div id='saveName'>"+ theFile.name +" loaded</div>");
-			parseSav(e.target.result);
+			var results = parseSav(e.target.result);
+			console.log(results);
 		};
 	})(savefile);
 	reader.readAsBinaryString(savefile);
@@ -78,6 +79,16 @@ function parseSav(data) {
 		var offset = 0x2605;
 		var size = 2;
 		return hex2int(offset, size);
+	}
+
+	function getTimePlayed() {
+		var offset = 0x2CEE;
+		return {
+			hours : hex2int(offset, 1),
+			minutes : hex2int(offset+1, 1),
+			seconds : hex2int(offset+2, 1),
+			frames : hex2int(offset+3, 1)
+		};
 	}
 
 	function getTextString(offset, size) {
@@ -129,15 +140,13 @@ function parseSav(data) {
 		return parseInt(val, 16);
 	}
 
-	alert("Trainer name: " + getTrainerName());
-	alert("Rival name: " + getRivalName());
-	alert("Trainer ID: " + getTrainerID());
 
 	// return an object containing the data in an easy to manipulate format
 	return {
 		trainerName: getTrainerName(),
 		rivalName: getRivalName(),
-		trainerID: getTrainerID()
+		trainerID: getTrainerID(),
+		timePlayed : getTimePlayed()
 	};
 }
 
