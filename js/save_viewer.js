@@ -111,9 +111,11 @@ function parseSav(data) {
 		for(var i = 0; i < obj.count; i ++) {
 			var itemIndex = hex2int(offset+(i*2), 1);
 			var itemCount = hex2int(offset+(i*2)+1, 1);
+			var name = getItemNameFromHexIndex(data.charCodeAt(offset+(i*2)));
 			obj.items.push({
 				count : itemCount,
-				index : itemIndex
+				index : itemIndex,
+				name : name
 			});
 		}
 
@@ -159,6 +161,23 @@ function parseSav(data) {
 			0xFB : "5", 0xFC : "6", 0xFD : "7", 0xFE : "8", 0xFF : "9"
 		};
 		return charMap[hex];
+	}
+
+	function getItemNameFromHexIndex(hex) {
+		var itemMap = {
+			0x00 : "Nothing", 0x01 : "Master Ball", 0x02 : "Ultra Ball", 0x03 : "Great Ball", 0x04 : "Poké Ball",
+			0x05 : "Town Map", 0x06 : "Bicycle", 0x07 : "?????", 0x08 : "Safari Ball", 0x09 : "Pokédex",
+			0x0A : "Moon Stone", 0x0B : "Antidote", 0x0C : "Burn Heal", 0x0D : "Ice Heal", 0x0E : "Awakening",
+			0x0F : "Parlyz Heal", 0x10 : "Full Restore", 0x11 : "Max Potion", 0x12 : "Hyper Potion", 0x13 : "Super Potion",
+			0x14 : "Potion", 0x15 : "BoulderBadge", 0x16 : "CascadeBadge", 0x17 : "ThunderBadge", 0x18 : "RainbowBadge",
+			0x19 : "SoulBadge", 0x1A : "MarshBadge", 0x1B : "VolcanoBadge", 0x1C : "EarthBadge", 0x1D : "Escape Rope",
+			0x1E : "Repel", 0x1F : "Old Amber", 0x20 : "Fire Stone", 0x21 : "Thunderstone", 0x22 : "Water Stone",
+			0x23 : "HP Up", 0x24 : "Protein", 0x25 : "Iron", 0x26 : "Carbos", 0x27 : "Calcium",
+			0x28 : "Rare Candy", 0x29 : "Dome Fossil", 0x2A : "Helix Fossil", 0x2B : "Secret Key", 0x2C : "?????",
+			0x2D : "Bike Voucher"
+
+		};
+		return itemMap[hex];
 	}
 
 	function hex2int(offset, size) {
