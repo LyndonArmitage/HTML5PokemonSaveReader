@@ -102,6 +102,10 @@ function parseSav(data) {
 		return getItemList(0x27E6, 50);
 	}
 
+	function getChecksum() {
+		return hex2int(0x3523, 1);
+	}
+
 	function getItemList(offset, maxSize) {
 
 		// Two extra bytes:
@@ -219,7 +223,8 @@ function parseSav(data) {
 		trainerID: getTrainerID(),
 		timePlayed : getTimePlayed(),
 		pocketItemList : getPocketItemList(),
-		PCItemList : getPCItemList()
+		PCItemList : getPCItemList(),
+		checksum : getChecksum()
 	};
 }
 
