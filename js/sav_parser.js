@@ -6,60 +6,13 @@ This will make use of HTML5's File API so will not work in older browsers.
 
 */
 
-$(document).ready(function() {
-	loadEvent();
-});
-
-function loadEvent() {
-	var $container = $("#container");
-	if(!supportsFileAPI()) {
-		$container.text("Your browser does not support HTML5's File API. Please update to a better browser.");
-	}
-	else {
-		// We support HTML5 File API so let's get cooking.
-		alert("Yay File API Support");
-		$container.html("<div id='inputLabel'>Save File:</div><input type='file' id='fileInput' name='savefile' />");
-		var $fileIn = $container.find("#fileInput");
-		$fileIn.bind("change", loadFile);
-	}
-}
-
 /**
- * Function that returns true if the user's web browser supports the HTML5 File API
- * @returns {boolean}
+ * Save Data Parser.<br/>
+ * Will Take in a binary string and return an object representing the save data gleamed from it.<br/>
+ * Currently only supports Generation 1 save files (Yellow, Red and Blue)
+ * @param data
+ * @returns {{trainerName: *, rivalName: *, trainerID: *, timePlayed: *, pocketItemList: *, PCItemList: *, checksum: *}}
  */
-function supportsFileAPI() {
-	return window.File && window.FileReader && window.FileList && window.Blob;
-}
-
-function readFile(savefile) {
-	var reader = new FileReader();
-
-	reader.onload = (function(theFile) {
-		return function(e) {
-			$("#container").append("<div id='saveName'>"+ theFile.name +" loaded</div>");
-			var results = parseSav(e.target.result);
-			console.log(results);
-		};
-	})(savefile);
-	reader.readAsBinaryString(savefile);
-}
-
-function loadFile(evt) {
-	evt = evt.originalEvent || evt;
-	alert(evt);
-	console.log(evt);
-	var savefile = evt.target.files[0];
-	// save files are 32kb large and end in .sav
-	if(savefile != null && savefile.size >= 32768 && savefile.name.endsWith(".sav")) {
-		alert("Yay a valid save file!");
-		readFile(savefile);
-	}
-	else {
-		alert("That wasn't a valid save file");
-	}
-}
-
 function parseSav(data) {
 	// lets test getting the trainer name data
 	// Currently just output the hex, it works so next step is to translate into text
@@ -227,12 +180,3 @@ function parseSav(data) {
 		checksum : getChecksum()
 	};
 }
-
-/**
- * Ends with method for checking if a string ends with a bit of text
- * @param suffix
- * @returns {boolean}
- */
-String.prototype.endsWith = function(suffix) {
-	return this.indexOf(suffix, this.length - suffix.length) !== -1;
-};
