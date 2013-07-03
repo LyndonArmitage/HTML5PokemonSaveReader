@@ -91,6 +91,35 @@ function parseSav(data) {
 		};
 	}
 
+	function getPocketItemList() {
+		// Can hold 20 items making the size 42 because: Capacity * 2 + 2 = 42
+
+		// Two extra bytes:
+		// The byte at offset 0x00 is the total Count of different items in the list
+		// The byte following the last item entry, according to Count, must always be a terminator, which is byte value 0xFF.
+
+		var offset = 0x25C9;
+//		var size = 42; // total byte size
+
+		var obj = {
+			count : hex2int(offset, 1),
+			items : []
+		};
+
+		offset ++;
+		// Each entry is 2 bytes large, first byte is the Count of that item, second is it's Index
+		for(var i = 0; i < obj.count; i ++) {
+			var itemIndex = hex2int(offset+(i*2), 1);
+			var itemCount = hex2int(offset+(i*2)+1, 1);
+			obj.items.push({
+				count : itemCount,
+				index : itemIndex
+			});
+		}
+
+		return obj;
+	}
+
 	function getTextString(offset, size) {
 		var output = "";
 		for(var i = 0; i < size; i ++) {
@@ -146,7 +175,8 @@ function parseSav(data) {
 		trainerName: getTrainerName(),
 		rivalName: getRivalName(),
 		trainerID: getTrainerID(),
-		timePlayed : getTimePlayed()
+		timePlayed : getTimePlayed(),
+		pocketItemList : getPocketItemList()
 	};
 }
 
