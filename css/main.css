@@ -4,14 +4,14 @@ body {
 
 #container {
 	width: 800px;
-	height: 600px;
+	min-height: 600px;
 	margin: 0 auto;
 	border: #000000 solid 1px;
 	background: url("../imgs/tile1.png") repeat;
 }
 
 #inputLabel {
-	margin: 0 auto;
+	margin: 10px auto;
 	width: 200px;
 	height: 100px;
 	border: #000000 outset 2px;
@@ -24,4 +24,30 @@ body {
 
 #inputLabel:active {
 	border: #000000 inset 2px;
+}
+
+#outputSection {
+	width: 600px;
+	min-height: 200px;
+	border: #000000 groove 2px;
+	border-radius: 20px;
+	background: #ffffff;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+#error {
+	text-align: center;
+	color: red;
+	font-weight: bold;
+}
+
+h1 {
+	text-align: center;
+	font-size: 25px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 20px;
 }
