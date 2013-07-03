@@ -29,12 +29,7 @@ function loadEvent() {
  * @returns {boolean}
  */
 function supportsFileAPI() {
-	if(window.File && window.FileReader && window.FileList && window.Blob) {
-		return true;
-	}
-	else {
-		return false;
-	}
+	return window.File && window.FileReader && window.FileList && window.Blob;
 }
 
 function readFile(savefile) {
@@ -79,6 +74,12 @@ function parseSav(data) {
 		return getTextString(offset, size);
 	}
 
+	function getTrainerID() {
+		var offset = 0x2605;
+		var size = 2;
+		return hex2int(offset, size);
+	}
+
 	function getTextString(offset, size) {
 		var output = "";
 		for(var i = 0; i < size; i ++) {
@@ -120,8 +121,24 @@ function parseSav(data) {
 		return charMap[hex];
 	}
 
+	function hex2int(offset, size) {
+		var val = "";
+		for(var i = 0; i < size; i ++) {
+			val += data.charCodeAt(offset + i).toString(16);
+		}
+		return parseInt(val, 16);
+	}
+
 	alert("Trainer name: " + getTrainerName());
 	alert("Rival name: " + getRivalName());
+	alert("Trainer ID: " + getTrainerID());
+
+	// return an object containing the data in an easy to manipulate format
+	return {
+		trainerName: getTrainerName(),
+		rivalName: getRivalName(),
+		trainerID: getTrainerID()
+	};
 }
 
 /**
