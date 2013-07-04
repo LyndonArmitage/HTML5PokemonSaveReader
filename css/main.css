@@ -3,6 +3,7 @@ body {
 }
 
 #container {
+	position: relative;
 	width: 800px;
 	min-height: 600px;
 	margin: 0 auto;
@@ -10,20 +11,28 @@ body {
 	background: url("../imgs/tile1.png") repeat;
 }
 
-#inputLabel {
-	margin: 10px auto;
+.btn {
 	width: 200px;
 	height: 100px;
 	border: #000000 outset 2px;
 	text-align: center;
 	line-height: 100px;
 	border-radius: 20px;
-	background: red;
 	cursor: pointer;
 }
 
-#inputLabel:active {
+.btn:active {
 	border: #000000 inset 2px;
+}
+
+#inputLabel {
+	margin: 10px auto;
+	background: red;
+}
+
+
+#saveButton {
+	background: blue;
 }
 
 #outputSection {
