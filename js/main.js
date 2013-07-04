@@ -56,8 +56,8 @@ function readFile(savefile) {
 						"<li><b>Trainer ID:</b> " + results.trainerID + "</li>"+
 						"<li><b>Rival Name:</b> " + results.rivalName + "</li>"+
 						"<li><b>Time Played:</b> " + results.timePlayed.hours +":"+ results.timePlayed.minutes + ":" + results.timePlayed.seconds + "</li>"+
-						"<li><b>Checksum:</b> " + results.checksum + "</li>"
-					;
+						"<li><b>Money:</b> " + results.money + "</li>"+
+						"<li><b>Checksum:</b> " + results.checksum + "</li>";
 
 				function addItemList(label, items) {
 					resultsContents += "<li><b>"+label+": </b>";

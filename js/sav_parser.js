@@ -67,9 +67,22 @@ function parseSav(data) {
 		var offset = 0x25F3;
 		var size = 3; // 3 bytes because each digit comes from a nibble
 		var out = "";
+		var shouldAdd = false;
 		for(var i = 0; i < size; i ++) {
-			var byte = data.charCodeAt(offset+i);
-			out += byte.toString(16);
+			var byteVal = data.charCodeAt(offset+i);
+			var digit1 = byteVal >> 4;
+			var digit2 = byteVal & 0xF;
+			// Check if we should add 0s (for middle of number)
+			if(shouldAdd || digit1 > 0) {
+				out += digit1;
+				shouldAdd = true;
+			}
+			if(shouldAdd || digit2 > 0) {
+				out += digit2;
+				shouldAdd = true;
+			}
+
+
 		}
 		return out; // wrong output at the moment...
 	}
@@ -192,6 +205,7 @@ function parseSav(data) {
 		timePlayed : getTimePlayed(),
 		pocketItemList : getPocketItemList(),
 		PCItemList : getPCItemList(),
-		checksum : getChecksum()
+		checksum : getChecksum(),
+		money : getMoney()
 	};
 }
