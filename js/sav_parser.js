@@ -35,12 +35,12 @@ function parseSav(data) {
 	}
 
 	function getTimePlayed() {
-		var offset = 0x2CEE;
+		var offset = 0x2CED;
 		return {
 			hours : hex2int(offset, 1),
-			minutes : hex2int(offset+1, 1),
-			seconds : hex2int(offset+2, 1),
-			frames : hex2int(offset+3, 1)
+			minutes : hex2int(offset+2, 1),
+			seconds : hex2int(offset+3, 1),
+			frames : hex2int(offset+4, 1)
 		};
 	}
 
@@ -57,6 +57,21 @@ function parseSav(data) {
 
 	function getChecksum() {
 		return hex2int(0x3523, 1);
+	}
+
+	function getMoney() {
+		// makes use of packed BCD
+		// Represents how much money the character has.
+		// The figure is a 6-digit number, 2 digits per byte, encoded as binary-coded decimal,
+		// where each digit is allocated a full 4 bits.
+		var offset = 0x25F3;
+		var size = 3; // 3 bytes because each digit comes from a nibble
+		var out = "";
+		for(var i = 0; i < size; i ++) {
+			var byte = data.charCodeAt(offset+i);
+			out += byte.toString(16);
+		}
+		return out; // wrong output at the moment...
 	}
 
 	function getItemList(offset, maxSize) {
