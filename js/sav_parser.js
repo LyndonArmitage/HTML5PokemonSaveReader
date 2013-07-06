@@ -81,10 +81,8 @@ function parseSav(data) {
 				out += digit2;
 				shouldAdd = true;
 			}
-
-
 		}
-		return out; // wrong output at the moment...
+		return out;
 	}
 
 	function getItemList(offset, maxSize) {
