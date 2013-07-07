@@ -89,6 +89,37 @@ function parseSav(data) {
 		return lowNibble(hex2int(0x284C, 1)) + 1;
 	}
 
+	function getSeenList() {
+		return getPokedexList(0x25B6);
+	}
+
+	function getOwnedList() {
+		return getPokedexList(0x25A3);
+	}
+
+	/**
+	 * Returns a binary string where a 1 represents that the Pokemon with that index is present.
+	 * @param offset
+	 * @returns {string}
+	 */
+	function getPokedexList(offset) {
+		var length = 19; // 19 bytes long = 152 possible bits
+		var binaryString = "";
+		for(var i = length; i > 0; i --) {
+			var str = data.charCodeAt(offset + i).toString(2);
+			var padding = "";
+			if(str.length < 8) {
+				var dif = 8 - str.length;
+				while(dif > 0) {
+					padding += "0";
+					dif --;
+				}
+			}
+			binaryString += str + padding;
+		}
+		return binaryString.split("").reverse().join("");
+	}
+
 	function getItemList(offset, maxSize) {
 
 		// Two extra bytes:
@@ -217,6 +248,8 @@ function parseSav(data) {
 		PCItemList : getPCItemList(),
 		checksum : getChecksum(),
 		money : getMoney(),
-		currentPCBox : getCurrentPCBox()
+		currentPCBox : getCurrentPCBox(),
+		seenList : getSeenList(),
+		ownedList : getOwnedList()
 	};
 }
