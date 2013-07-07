@@ -85,6 +85,10 @@ function parseSav(data) {
 		return out;
 	}
 
+	function getCurrentPCBox() {
+		return lowNibble(hex2int(0x284C, 1)) + 1;
+	}
+
 	function getItemList(offset, maxSize) {
 
 		// Two extra bytes:
@@ -194,6 +198,14 @@ function parseSav(data) {
 		return parseInt(val, 16);
 	}
 
+	function lowNibble(val) {
+		return val & 0x0F;
+	}
+
+	function highNibble(val) {
+		return (val >> 4) & 0x0F;
+	}
+
 
 	// return an object containing the data in an easy to manipulate format
 	return {
@@ -204,6 +216,7 @@ function parseSav(data) {
 		pocketItemList : getPocketItemList(),
 		PCItemList : getPCItemList(),
 		checksum : getChecksum(),
-		money : getMoney()
+		money : getMoney(),
+		currentPCBox : getCurrentPCBox()
 	};
 }
