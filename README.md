@@ -16,6 +16,10 @@ Can currently open a .sav file and read the following:
 * Time Played
 * Items in Pocket
 * items in PC
+* Money
+* Checksum
+* Current Box selected
+* Pok&#233;dex Owned and Seen stats
 
 ## Other: ##
 
