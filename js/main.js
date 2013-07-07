@@ -76,6 +76,19 @@ function readFile(savefile) {
 
 				addItemList("Pocket Items", results.pocketItemList);
 				addItemList("PC Items", results.PCItemList);
+
+				function addPokedexList(label, list) {
+					var num = 0;
+					for(var i = 0; i < list.length; i ++) {
+						if(list.charAt(i) == "1") {
+							num ++;
+						}
+					}
+					resultsContents += "<li><b>"+label+": </b>"+ num +"</li>";
+				}
+
+				addPokedexList("Pok&#233;dex Seen", results.seenList);
+				addPokedexList("Pok&#233;dex Owned", results.ownedList);
 				resultsContents += "</ul>";
 				$("#outputSection").append(resultsContents);
 
