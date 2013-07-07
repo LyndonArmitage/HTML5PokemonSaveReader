@@ -1,9 +1,9 @@
-# Readme for Pokemon Save File Reader #
+# Readme for Pok&#233;mon Save File Reader #
 
 by Lyndon Armitage
 
 
-This is a HTML5 implementation of a Pokemon Red, Blue and Yellow save game viewer (and possibly editor in the future).
+This is a HTML5 implementation of a Pok&#233;mon Red, Blue and Yellow save game viewer (and possibly editor in the future).
 Made for fun, and educational purposes only.
 
 ## Current Version: ##
@@ -23,9 +23,10 @@ Can currently open a .sav file and read the following:
 
 ## Other: ##
 
-This page is useful for The structure of Pokemon Red/Blue & Possibly Yellow save files: 
-bulbapedia.bulbagarden.net/wiki/Save_data_structure_in_Generation_I
+This page is useful for The structure of Pok&#233;mon Red/Blue & Possibly Yellow save files:
+http://bulbapedia.bulbagarden.net/wiki/Save_data_structure_in_Generation_I
+Although not all of it's data is accurate.
 
 ### Copyright: ###
 
-Pokémon © 2002-2013 Pokémon. © 1995-2013 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.
+Pok&#233;mon © 2002-2013 Pok&#233;mon. © 1995-2013 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pok&#233;mon character names are trademarks of Nintendo.
