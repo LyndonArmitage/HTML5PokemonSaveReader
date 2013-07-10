@@ -8,7 +8,7 @@ body {
 	min-height: 600px;
 	margin: 0 auto;
 	border: #000000 solid 1px;
-	background: url("../imgs/tile1.png") repeat;
+	background: url("../imgs/fallback.png") repeat;
 }
 
 .btn {

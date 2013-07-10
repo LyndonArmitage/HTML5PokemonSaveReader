@@ -3,8 +3,14 @@ $(document).ready(function() {
 	loadEvent();
 });
 
+function updateBG() {
+	var $container = $("#container");
+	setBackground($container[0], $container.width(), $container.height());
+}
+
 function loadEvent() {
 	var $container = $("#container");
+	updateBG();
 	if(!supportsFileAPI()) {
 		$container.html("<div id='error'>Your browser does not support HTML5's File API. Please update to a better browser.</div>");
 	}
@@ -93,6 +99,7 @@ function readFile(savefile) {
 				$("#outputSection").append(resultsContents);
 
 			}
+			updateBG();
 		};
 	})(savefile);
 	reader.readAsBinaryString(savefile);
