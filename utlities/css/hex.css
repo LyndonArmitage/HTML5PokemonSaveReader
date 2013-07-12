@@ -1,0 +1,71 @@
+
+h1 {
+	text-align: center;
+}
+
+#container {
+	width: 800px;
+	min-height: 100px;
+	border: #000000 solid 1px;
+	margin: 0 auto;
+}
+
+#container h2 {
+	text-align: center;
+}
+
+.hex abbr {
+	border-bottom-width: 0;
+}
+
+
+#inputSection {
+	border: #000000 solid 1px;
+	width : 300px;
+	background: #ffffff;
+}
+
+@media (min-width: 1450px) {
+	#inputSection {
+		position: fixed;
+		right : 1px;
+	}
+}
+
+@media (max-width: 1450px) {
+	#inputSection {
+		margin: 0 auto;
+	}
+}
+
+
+#inputSection h3 {
+	margin-bottom: 0;
+	margin-top: 0;
+	text-align: center;
+}
+
+#inputSection label {
+	font-weight: bold;
+}
+
+#gotoResult {
+	color: red;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#selectedHex {
+	background: yellow;
+}
+
+#dataTable {
+	text-align: center;
+	margin: 0 auto;
+	border: #000000 solid 1px;
+	border-collapse:collapse;
+}
+
+#dataTable td {
+	border: 1px solid #000000;
+}
