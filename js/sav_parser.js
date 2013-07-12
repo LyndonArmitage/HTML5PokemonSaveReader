@@ -97,6 +97,15 @@ function parseSav(data) {
 		return getPokedexList(0x25A3);
 	}
 
+	function getPlayerPosition() {
+		var obj = {
+			x : hex2int(0x260E, 1),
+			y : hex2int(0x260D, 1),
+			mapNum : hex2int(0x260A, 1)
+		};
+		return obj;
+	}
+
 	/**
 	 * Returns a binary string where a 1 represents that the Pokemon with that index is present.
 	 * @param offset
@@ -250,6 +259,7 @@ function parseSav(data) {
 		money : getMoney(),
 		currentPCBox : getCurrentPCBox(),
 		seenList : getSeenList(),
-		ownedList : getOwnedList()
+		ownedList : getOwnedList(),
+		playerPosition : getPlayerPosition()
 	};
 }
