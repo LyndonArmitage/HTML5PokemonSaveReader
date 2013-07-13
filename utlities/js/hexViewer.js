@@ -1,12 +1,30 @@
 
 $(document).ready(function() {
 	var $fileIn = $("#fileInput");
-	$fileIn.bind("change", loadFile);
-
 	var $gotoBox = $("#gotoBox");
-	$gotoBox.bind("keypress", searchTable);
+	if(supportsFileAPI()) {
+		$fileIn.bind("change", loadFile);
+		$gotoBox.bind("keypress", searchTable);
+	}
+	else {
+		$("#container").html(
+			"<h2>Your browser does not support the HTML5 File API</h2>" +
+			"<div style='text-align: center'>This application makes use of the HTML5 File API to read local files.<br />" +
+			"Please update your browser</div>"
+		);
+		$("#inputSection").remove();
+	}
+
 
 });
+
+/**
+ * Function that returns true if the user's web browser supports the HTML5 File API
+ * @returns {boolean}
+ */
+function supportsFileAPI() {
+	return window.File && window.FileReader && window.FileList && window.Blob;
+}
 
 function loadFile(evt) {
 	evt = evt.originalEvent || evt;
