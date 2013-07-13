@@ -5,6 +5,19 @@ $(document).ready(function() {
 	if(supportsFileAPI()) {
 		$fileIn.bind("change", loadFile);
 		$gotoBox.bind("keypress", searchTable);
+		if(supportsStorage()) {
+			$("#saveNotes").bind("click", saveNotes);
+			$("#noteBox").bind("blur", setNote);
+			$("#noteBox").bind("keypress", function(e) {
+				if(e.keyCode === 13) {
+					setNote(e);
+				}
+			});
+			$("#clearNotes").bind("click", clearNotes);
+		}
+		else {
+			$("#notesSection").remove();
+		}
 	}
 	else {
 		$("#container").html(
@@ -26,6 +39,14 @@ function supportsFileAPI() {
 	return window.File && window.FileReader && window.FileList && window.Blob;
 }
 
+/**
+ * Function to check if Storage API is supported
+ * @returns {boolean}
+ */
+function supportsStorage() {
+	return window.localStorage != null && window.sessionStorage != null;
+}
+
 function loadFile(evt) {
 	evt = evt.originalEvent || evt;
 	var file = evt.target.files[0];
@@ -41,6 +62,10 @@ function openFile(file) {
 			var container = document.getElementById("container");
 			container.innerHTML = "";
 			createDataTable(e.target.result, "Contents of " + theFile.name, container);
+			if(supportsStorage()) {
+				loadNotes(theFile.name);
+				changeNote(null);
+			}
 		};
 	})(file);
 	reader.readAsBinaryString(file);
@@ -100,6 +125,7 @@ function createDataTable(data, heading, container) {
 	$(".hex").bind("click", function() {
 		var $abbr =  $(this).find("abbr");
 		selectHex($abbr[0]);
+		changeNote($abbr[0]);
 	})
 }
 
@@ -131,5 +157,77 @@ function searchTable(event) {
 		else {
 			document.getElementById("gotoResult").innerHTML = "Not Found";
 		}
+	}
+}
+
+function changeNote(element) {
+	if(element != null) {
+		document.getElementById("noteBox").value = element.getAttribute("note");
+	}
+	else {
+		document.getElementById("noteBox").value = "";
+	}
+}
+
+function setNote(event) {
+	var fileInput = document.getElementById("fileInput");
+	if(fileInput.files.length > 0) {
+		var txt = document.getElementById("noteBox").value;
+		var gotoBox = document.getElementById("gotoBox");
+		var elementName = gotoBox.value;
+		if(txt != null && txt.length > 0) {
+			$(".hex [name="+ elementName +"]").attr("note", txt);
+		}
+		else {
+			$(".hex [name="+ elementName +"]").removeAttr("note");
+		}
+	}
+}
+
+function saveNotes() {
+	var fileInput = document.getElementById("fileInput");
+	if(fileInput.files.length > 0) {
+		var filename = fileInput.files[0].name;
+		var notes = {};
+		var hexes = document.getElementsByClassName("hex");
+		for(var i = 0; i < hexes.length; i ++) {
+			var hex = hexes.item(i);
+			var $abbr = $(hex).find("abbr");
+			if($abbr.attr("note")!= null) {
+				console.log($abbr[0]);
+				notes[$abbr.attr("name")] = $abbr.attr("note");
+			}
+		}
+		console.log(notes);
+		localStorage.setItem(filename, JSON.stringify(notes));
+	}
+}
+
+function loadNotes(filename) {
+	var notes = JSON.parse(localStorage.getItem(filename));
+	if(notes != null) {
+		for(var key in notes) {
+			$(".hex [name="+ key +"]").attr("note", notes[key]);
+		}
+	}
+}
+
+function clearNotes() {
+	var fileInput = document.getElementById("fileInput");
+	if(fileInput.files.length > 0) {
+		var filename = fileInput.files[0].name;
+		if(confirm("Continuing will delete all notes for " +filename) == false) {
+			return;
+		}
+		localStorage.removeItem(filename);
+		var hexes = document.getElementsByClassName("hex");
+		for(var i = 0; i < hexes.length; i ++) {
+			var hex = hexes.item(i);
+			var $abbr = $(hex).find("abbr");
+			if($abbr.attr("note")!= null) {
+				$abbr.removeAttr("note");
+			}
+		}
+		changeNote(null);
 	}
 }

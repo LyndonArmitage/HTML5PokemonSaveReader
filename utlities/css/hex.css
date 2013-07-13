@@ -45,8 +45,13 @@ h1 {
 	text-align: center;
 }
 
-#inputSection label {
+#inputSection label, #inputSection .label {
 	font-weight: bold;
+}
+
+#noteBox {
+	width: 90%;
+	height: 100px;
 }
 
 #gotoResult {

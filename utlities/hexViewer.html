@@ -11,7 +11,12 @@
 <div id="inputSection">
 	<h3>Options</h3>
 	<label> Choose File: <input type='file' id='fileInput' name='savefile'/></label><br />
-	<label>Go To Hex: <input type="text" id='gotoBox' name='gotoBox' /></label><span id='gotoResult'></span>
+	<label>Go To Hex: <input type="text" id='gotoBox' name='gotoBox' /></label><span id='gotoResult'></span><br />
+	<div id="notesSection">
+		<div class='label'>Notes: </div><textarea id='noteBox' name='noteBox'></textarea>
+		<input type="button" name="saveNotes" id="saveNotes" value="Save Notes" />
+		<input type="button" name="clearNotes" id="clearNotes" value="Clear Notes" />
+	</div>
 </div>
 
 <div id="container">
