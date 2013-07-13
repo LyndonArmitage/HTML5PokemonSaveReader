@@ -193,16 +193,22 @@ function saveNotes() {
 	var fileInput = document.getElementById("fileInput");
 	if(fileInput.files.length > 0) {
 		var filename = fileInput.files[0].name;
-		var notes = {};
 		var $abbrs = $(".hex abbr.noted");
-		$abbrs.each(function() {
-			var $abbr = $(this);
-			if($abbr.attr("note") != null) {
-				notes[$abbr.attr("name")] = $abbr.attr("note");
-			}
-		});
-		console.log("Notes saved");
-		localStorage.setItem(filename, JSON.stringify(notes));
+		if($abbrs.size() > 0) {
+			var notes = {};
+			$abbrs.each(function() {
+				var $abbr = $(this);
+				if($abbr.attr("note") != null) {
+					notes[$abbr.attr("name")] = $abbr.attr("note");
+				}
+			});
+			console.log("Notes saved");
+			localStorage.setItem(filename, JSON.stringify(notes));
+		}
+		else {
+			localStorage.removeItem(filename);
+		}
+
 	}
 }
 
