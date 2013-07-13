@@ -153,6 +153,7 @@ function searchTable(event) {
 		if(elements.length > 0) {
 			elements[0].scrollIntoView(true);
 			elements[0].id = "selectedHex";
+			changeNote(elements[0]);
 			document.getElementById("gotoResult").innerHTML = "Found";
 		}
 		else {
@@ -176,11 +177,14 @@ function setNote() {
 		var txt = document.getElementById("noteBox").value;
 		var gotoBox = document.getElementById("gotoBox");
 		var elementName = gotoBox.value;
+		var $abbr = $(".hex abbr[name="+ elementName +"]");
 		if(txt != null && txt.length > 0) {
-			$(".hex [name="+ elementName +"]").attr("note", txt);
+			$abbr.attr("note", txt);
+			$abbr.addClass("noted");
 		}
 		else {
-			$(".hex [name="+ elementName +"]").removeAttr("note");
+			$abbr.removeAttr("note");
+			$abbr.removeClass("noted");
 		}
 	}
 }
@@ -190,7 +194,7 @@ function saveNotes() {
 	if(fileInput.files.length > 0) {
 		var filename = fileInput.files[0].name;
 		var notes = {};
-		var $abbrs = $(".hex abbr");
+		var $abbrs = $(".hex abbr.noted");
 		$abbrs.each(function() {
 			var $abbr = $(this);
 			if($abbr.attr("note") != null) {
@@ -206,7 +210,9 @@ function loadNotes(filename) {
 	var notes = JSON.parse(localStorage.getItem(filename));
 	if(notes != null) {
 		for(var key in notes) {
-			$(".hex [name="+ key +"]").attr("note", notes[key]);
+			var $abbr = $(".hex abbr[name="+ key +"]");
+			$abbr.attr("note", notes[key]);
+			$abbr.addClass("noted");
 		}
 		console.log("Notes loaded");
 	}
@@ -220,7 +226,8 @@ function clearNotes() {
 			return;
 		}
 		localStorage.removeItem(filename);
-		$(".hex abbr").removeAttr("note");
+		$(".hex abbr.noted").removeAttr("note");
+		$(".hex abbr.noted").removeClass("noted");
 		changeNote(null);
 	}
 }

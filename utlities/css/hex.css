@@ -54,6 +54,10 @@ h1 {
 	height: 100px;
 }
 
+.noted {
+	background: green;
+}
+
 #gotoResult {
 	color: red;
 	font-weight: bold;
