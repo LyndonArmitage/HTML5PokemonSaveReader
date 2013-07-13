@@ -14,6 +14,7 @@ $(document).ready(function() {
 				}
 			});
 			$("#clearNotes").bind("click", clearNotes);
+			$(window).on('beforeunload', saveNotes); // save when they close or navigate away
 		}
 		else {
 			$("#notesSection").remove();
@@ -162,14 +163,14 @@ function searchTable(event) {
 
 function changeNote(element) {
 	if(element != null) {
-		document.getElementById("noteBox").value = element.getAttribute("note");
+		$("#noteBox").val(element.getAttribute("note"));
 	}
 	else {
-		document.getElementById("noteBox").value = "";
+		$("#noteBox").val("");
 	}
 }
 
-function setNote(event) {
+function setNote() {
 	var fileInput = document.getElementById("fileInput");
 	if(fileInput.files.length > 0) {
 		var txt = document.getElementById("noteBox").value;
@@ -189,16 +190,14 @@ function saveNotes() {
 	if(fileInput.files.length > 0) {
 		var filename = fileInput.files[0].name;
 		var notes = {};
-		var hexes = document.getElementsByClassName("hex");
-		for(var i = 0; i < hexes.length; i ++) {
-			var hex = hexes.item(i);
-			var $abbr = $(hex).find("abbr");
-			if($abbr.attr("note")!= null) {
-				console.log($abbr[0]);
+		var $abbrs = $(".hex abbr");
+		$abbrs.each(function() {
+			var $abbr = $(this);
+			if($abbr.attr("note") != null) {
 				notes[$abbr.attr("name")] = $abbr.attr("note");
 			}
-		}
-		console.log(notes);
+		});
+		console.log("Notes saved");
 		localStorage.setItem(filename, JSON.stringify(notes));
 	}
 }
@@ -209,6 +208,7 @@ function loadNotes(filename) {
 		for(var key in notes) {
 			$(".hex [name="+ key +"]").attr("note", notes[key]);
 		}
+		console.log("Notes loaded");
 	}
 }
 
@@ -220,14 +220,7 @@ function clearNotes() {
 			return;
 		}
 		localStorage.removeItem(filename);
-		var hexes = document.getElementsByClassName("hex");
-		for(var i = 0; i < hexes.length; i ++) {
-			var hex = hexes.item(i);
-			var $abbr = $(hex).find("abbr");
-			if($abbr.attr("note")!= null) {
-				$abbr.removeAttr("note");
-			}
-		}
+		$(".hex abbr").removeAttr("note");
 		changeNote(null);
 	}
 }
