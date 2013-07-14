@@ -141,6 +141,36 @@ function selectHex(element) {
 		gotoBox.value = element.getAttribute("name");
 		document.getElementById("gotoResult").innerHTML = "Found";
 	}
+	setDebugDiv(element);
+}
+
+function setDebugDiv(element) {
+	var $debugDiv = $("#debugData");
+	function hexString2ascii(hex) {
+		var str = '';
+		for (var i = 0; i < hex.length; i += 2)
+			str += String.fromCharCode(parseInt(hex.substr(i, 2), 16));
+		return str;
+	}
+	function hexString2int(hex) {
+		var str = '';
+		for (var i = 0; i < hex.length; i += 2)
+			str += parseInt(hex.substr(i, 2), 16);
+		return str;
+	}
+	function hexString2binary(hex) {
+		return parseInt(hex, 16).toString(2);
+	}
+	if(element != null) {
+		$debugDiv.html(
+			"<span class='label'>As Text: </span><span>"+ hexString2ascii(element.innerHTML) +"</span><br/>" +
+			"<span class='label'>As Integer: </span><span>"+ hexString2int(element.innerHTML) +"</span><br/>" +
+			"<span class='label'>As Binary: </span><span>"+ hexString2binary(element.innerHTML) +"</span><br/>"
+		);
+	}
+	else {
+		$debugDiv.html("");
+	}
 }
 
 function searchTable(event) {
@@ -155,9 +185,11 @@ function searchTable(event) {
 			elements[0].id = "selectedHex";
 			changeNote(elements[0]);
 			document.getElementById("gotoResult").innerHTML = "Found";
+			setDebugDiv(elements[0]);
 		}
 		else {
 			document.getElementById("gotoResult").innerHTML = "Not Found";
+			setDebugDiv(null);
 		}
 	}
 }
