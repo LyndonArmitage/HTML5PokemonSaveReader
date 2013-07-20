@@ -230,6 +230,14 @@ function parseSav(data) {
 		return itemMap[hex];
 	}
 
+	/**
+	 * Returns how friendly Pikachu is to you
+	 * @returns {*}
+	 */
+	function getPikachuFriendship() {
+		return hex2int(0x271C, 1);
+	}
+
 	function hex2int(offset, size) {
 		var val = "";
 		for(var i = 0; i < size; i ++) {
@@ -247,6 +255,50 @@ function parseSav(data) {
 	}
 
 
+	/**
+	 * Constructor for new Pokemon
+	 * @param startOffset
+	 * @param isPartyMember
+	 * @constructor
+	 */
+	function Pokemon(startOffset, isPartyMember) {
+		this.index = hex2int(startOffset, 1);
+		this.currentHp = hex2int(startOffset + 0x01, 2);
+		this.level = hex2int(startOffset + 0x03, 1);
+		this.status = hex2int(startOffset + 0x04, 1);
+		this.type1 = hex2int(startOffset + 0x05, 1);
+		this.type2 = hex2int(startOffset + 0x06, 1);
+		this.catchRate = hex2int(startOffset + 0x07, 1);
+		this.move1Index = hex2int(startOffset + 0x08, 1);
+		this.move2Index = hex2int(startOffset + 0x09, 1);
+		this.move3Index = hex2int(startOffset + 0x0A, 1);
+		this.move4Index = hex2int(startOffset + 0x0B, 1);
+		this.ownerID = hex2int(startOffset + 0x0C, 2);
+		this.exp = hex2int(startOffset + 0x0E, 3);
+		this.hpEV = hex2int(startOffset + 0x11, 2);
+		this.attackEV = hex2int(startOffset + 0x13, 2);
+		this.defenseEV = hex2int(startOffset + 0x15, 2);
+		this.speedEV = hex2int(startOffset + 0x17, 2);
+		this.specialEV = hex2int(startOffset + 0x19, 2);
+		this.IV = hex2int(startOffset + 0x1B, 2);
+		this.move1PP = hex2int(startOffset + 0x1D, 1);
+		this.move2PP = hex2int(startOffset + 0x1E, 1);
+		this.move3PP = hex2int(startOffset + 0x1F, 1);
+		this.move4PP = hex2int(startOffset + 0x20, 1);
+		if(isPartyMember) {
+			this.partyLevel = hex2int(startOffset + 0x21, 1);
+			this.partyMaxHp = hex2int(startOffset + 0x22, 2);
+			this.partyAttack = hex2int(startOffset + 0x24, 2);
+			this.partyDefense = hex2int(startOffset + 0x26, 2);
+			this.partySpeed = hex2int(startOffset + 0x28, 2);
+			this.partySpecial = hex2int(startOffset + 0x2A, 2);
+			this.isParty = true;
+		}
+		else {
+			this.isParty = false;
+		}
+	}
+
 	// return an object containing the data in an easy to manipulate format
 	return {
 		trainerName: getTrainerName(),
@@ -260,6 +312,7 @@ function parseSav(data) {
 		currentPCBox : getCurrentPCBox(),
 		seenList : getSeenList(),
 		ownedList : getOwnedList(),
-		playerPosition : getPlayerPosition()
+		playerPosition : getPlayerPosition(),
+		pikachuFriendship: getPikachuFriendship()
 	};
 }
