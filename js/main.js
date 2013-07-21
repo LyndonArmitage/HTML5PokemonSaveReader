@@ -95,6 +95,35 @@ function readFile(savefile) {
 
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
 				addPokedexList("Pok&#233;dex Owned", results.ownedList);
+
+				function addPokemonList(label, list) {
+					resultsContents += "<li><b>"+label+":</b>";
+					if(list.count > 0) {
+						resultsContents += "<ol>";
+						for(var i = 0; i < list.count; i ++) {
+							resultsContents += "<li>";
+							resultsContents += list.names[i];
+							resultsContents += "<ul>";
+							resultsContents += "<li><b>Species: </b>"+list.species[i]+"</li>";
+							resultsContents += "<li><b>Original Trainer: </b>"+list.OTNames[i]+"</li>";
+							resultsContents += "<li><b>Type 1: </b>"+list.pokemon[i].type1+"</li>";
+							resultsContents += "<li><b>Type 2: </b>"+list.pokemon[i].type2+"</li>";
+							resultsContents += "<li><b>Current HP: </b>"+list.pokemon[i].currentHp+"</li>";
+							resultsContents += "<li><b>Exp: </b>"+list.pokemon[i].exp+"</li>";
+							if(list.pokemon[i].isParty) {
+								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].partyLevel+"</li>";
+							}
+							resultsContents += "</ul>";
+
+							resultsContents += "</li>";
+						}
+						resultsContents += "</ol>";
+					}
+					resultsContents += "</li>";
+				}
+
+				addPokemonList("Party Pok&#233;mon", results.partyList);
+
 				resultsContents += "</ul>";
 				$("#outputSection").append(resultsContents);
 
