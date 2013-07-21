@@ -127,8 +127,8 @@ function parseSav(data) {
 		for(var i = 0; i < count; i ++) {
 			list.species[i] = getSpeciesFromIndex(hex2int(offset + 1 + i, 1));
 			list.pokemon[i] = new Pokemon((offset + 2 + capacity) + (i * size), isParty)
-			list.OTNames[i] = getTextString( ((offset + 2 + capacity) + ((count-1) * size)) + size + (i*11) , 10);
-			list.names[i] = getTextString( (((offset + 2 + capacity) + ((count-1) * size)) + size + ((count-1)*11)) + ((i+1)*11) , 10);
+			list.OTNames[i] = getTextString( ((offset + 2 + capacity) + ((capacity-1) * size)) + size + (i*11) , 10);
+			list.names[i] = getTextString( (((offset + 2 + capacity) + ((capacity-1) * size)) + size + ((capacity-1)*11)) + ((i+1)*11) , 10);
 		}
 
 		return list;
