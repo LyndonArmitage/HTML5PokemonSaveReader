@@ -280,6 +280,27 @@ function parseSav(data) {
 		return (val >> 4) & 0x0F;
 	}
 
+	function getPokemonType(index) {
+		var types = {
+			0x00: "Normal",
+			0x01: "Fighting",
+			0x02: "Flying",
+			0x03: "Poison",
+			0x04: "Ground",
+			0x05: "Rock",
+			0x07: "Bug",
+			0x08: "Ghost",
+			0x14: "Fire",
+			0x15: "Water",
+			0x16: "Grass",
+			0x17: "Electric",
+			0x18: "Psychic",
+			0x19: "Ice",
+			0x1A: "Dragon"
+		};
+		return types[index];
+	}
+
 	function getSpeciesFromIndex(index) {
 		var species = {
 			0x01: "	Rhydon", 0x02: "Kangaskhan", 0x03: "Nidoran♂", 0x04: "Clefairy", 0x05: "Spearow",
@@ -441,8 +462,10 @@ function parseSav(data) {
 		this.currentHp = hex2int(startOffset + 0x01, 2);
 		this.level = hex2int(startOffset + 0x03, 1);
 		this.status = hex2int(startOffset + 0x04, 1);
-		this.type1 = hex2int(startOffset + 0x05, 1);
-		this.type2 = hex2int(startOffset + 0x06, 1);
+		this.type1Index = hex2int(startOffset + 0x05, 1);
+		this.type2Index = hex2int(startOffset + 0x06, 1);
+		this.type1 = getPokemonType(this.type1Index);
+		this.type2 = getPokemonType(this.type2Index);
 		this.catchRate = hex2int(startOffset + 0x07, 1);
 		this.move1Index = hex2int(startOffset + 0x08, 1);
 		this.move2Index = hex2int(startOffset + 0x09, 1);
