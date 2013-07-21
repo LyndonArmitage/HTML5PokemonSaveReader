@@ -118,13 +118,17 @@ function parseSav(data) {
 		var list = {
 			count : hex2int(offset, 1),
 			species : [],
-			pokemon : []
+			pokemon : [],
+			OTNames : [],
+			names : []
 		};
 
 		// we will use count here as it tells us the amount actually present so we don't need to look for 0xFF
 		for(var i = 0; i < count; i ++) {
 			list.species[i] = getSpeciesFromIndex(hex2int(offset + 1 + i, 1));
 			list.pokemon[i] = new Pokemon((offset + 2 + capacity) + (i * size), isParty)
+			list.OTNames[i] = getTextString( ((offset + 2 + capacity) + ((count-1) * size)) + size + (i*11) , 10);
+			list.names[i] = getTextString( (((offset + 2 + capacity) + ((count-1) * size)) + size + ((count-1)*11)) + ((i+1)*11) , 10);
 		}
 
 		return list;
