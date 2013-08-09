@@ -113,6 +113,9 @@ function readFile(savefile) {
 							if(list.pokemon[i].isParty) {
 								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].partyLevel+"</li>";
 							}
+							else {
+								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].level+"</li>";
+							}
 							resultsContents += "</ul>";
 
 							resultsContents += "</li>";
