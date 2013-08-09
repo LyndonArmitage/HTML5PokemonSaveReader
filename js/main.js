@@ -123,6 +123,7 @@ function readFile(savefile) {
 				}
 
 				addPokemonList("Party Pok&#233;mon", results.partyList);
+				addPokemonList("Current Box Pok&#233;mon", results.currentBoxList);
 
 				resultsContents += "</ul>";
 				$("#outputSection").append(resultsContents);

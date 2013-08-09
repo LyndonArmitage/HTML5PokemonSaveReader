@@ -110,6 +110,30 @@ function parseSav(data) {
 		return getPokemonList(0x2F2C, 6, true);
 	}
 
+	function getBoxList(boxNumber) {
+		var boxMap = {
+			1 : 0x4000,
+			2 : 0x4462,
+			3 : 0x48C4,
+			4 : 0x4D26,
+			5 : 0x5188,
+			6 : 0x55EA,
+			7 : 0x6000,
+			8 : 0x6462,
+			9 : 0x68C4,
+			10 : 0x6D26,
+			11 : 0x7188,
+			12 : 0x75EA
+		};
+		var offset = boxMap[boxNumber];
+		console.log("! " + offset.toString(16));
+		return getPokemonList(offset, 20, false);
+	}
+
+	function getCurrentBoxList() {
+		return getPokemonList(0x30C0, 20, false);
+	}
+
 	function getPokemonList(offset, capacity, isParty) {
 		var size = isParty ? 44 : 33;
 		var totalSize = capacity * (size + 23) + 2;
@@ -516,6 +540,7 @@ function parseSav(data) {
 		ownedList : getOwnedList(),
 		playerPosition : getPlayerPosition(),
 		pikachuFriendship: getPikachuFriendship(),
-		partyList : getPartyList()
+		partyList : getPartyList(),
+		currentBoxList : getCurrentBoxList()
 	};
 }
