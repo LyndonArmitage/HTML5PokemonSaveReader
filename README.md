@@ -1,4 +1,4 @@
-# Readme for Pok&#233;mon Save File Reader #
+﻿# Readme for Pok&#233;mon Save File Reader #
 
 by Lyndon Armitage
 
@@ -33,4 +33,4 @@ Note that this may crash your browser for files with a lot of bytes (i.e. bigger
 
 ### Copyright: ###
 
-Pok&#233;mon © 2002-2013 Pok&#233;mon. © 1995-2013 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pok&#233;mon character names are trademarks of Nintendo.
+Pok&#233;mon © 2002-2015 Pok&#233;mon. © 1995-2015 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pok&#233;mon character names are trademarks of Nintendo.
