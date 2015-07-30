@@ -2,15 +2,6 @@ body {
 	font-family: 'VT323', Lucida Console;
 }
 
-#container {
-	position: relative;
-	width: 800px;
-	min-height: 600px;
-	margin: 0 auto;
-	border: #000000 solid 1px;
-	background: url("../imgs/fallback.png") repeat;
-}
-
 .btn {
 	width: 140px;
 	height: 40px;
@@ -37,7 +28,6 @@ body {
 }
 
 #outputSection {
-	width: 600px;
 	min-height: 200px;
 	border: #000000 groove 2px;
 	border-radius: 20px;
