@@ -12,12 +12,12 @@ body {
 }
 
 .btn {
-	width: 200px;
-	height: 100px;
+	width: 140px;
+	height: 40px;
 	border: #000000 outset 2px;
 	text-align: center;
-	line-height: 100px;
-	border-radius: 20px;
+	line-height: 40px;
+	border-radius: 10px;
 	cursor: pointer;
 }
 
@@ -27,7 +27,8 @@ body {
 
 #inputLabel {
 	margin: 10px auto;
-	background: red;
+	background: green;
+        color: #fff;
 }
 
 
