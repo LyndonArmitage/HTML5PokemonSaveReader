@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'PressStart2P';
+       url('fonts/PressStart2P.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/PressStart2P.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/PressStart2P.svg#svgFontName') format('svg'); /* Legacy iOS */
+       url('fonts/PressStart2P.woff2') format('woff2'), /* Super Modern Browsers */
+}
+
 body {
-	font-family: 'VT323', Lucida Console;
+  font-family: 'PressStart2P', Lucida Console, sans-serif;
 }
 
 .btn {
