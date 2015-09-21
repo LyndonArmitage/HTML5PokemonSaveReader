@@ -12,7 +12,7 @@ function loadEvent() {
 	var $container = $("#container");
 	updateBG();
 	if(!supportsFileAPI()) {
-		$container.html("<div id='error'>Your browser does not support HTML5's File API. Please update to a better browser.</div>");
+		$container.html("<div id='error'>Your browser does not support HTML5's File API. Please update your browser or if already updated, consider leaving it to a better browser.</div>");
 	}
 	else {
 		// We support HTML5 File API so let's get cooking.
