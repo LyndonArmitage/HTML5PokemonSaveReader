@@ -11,11 +11,9 @@ body {
 }
 
 .btn {
-	width: 140px;
-	height: 40px;
-	border: #000000 outset 2px;
+	padding: 10px;
+	border: blue outset 2px;
 	text-align: center;
-	line-height: 40px;
 	border-radius: 10px;
 	cursor: pointer;
 }
@@ -25,9 +23,9 @@ body {
 }
 
 #inputLabel {
-	margin: 10px auto;
-	background: green;
-        color: #fff;
+	background: rgb(255, 215, 0);
+	color: blue;
+	float: left;
 }
 
 
@@ -37,9 +35,10 @@ body {
 
 #outputSection {
 	min-height: 200px;
-	border: #000000 groove 2px;
+	border: blue groove 2px;
+	box-shadow: 0px 0px 0px 1px #fff;
 	border-radius: 20px;
-	background: #ffffff;
+	background: rgb(255, 215, 0);
 	margin: 10px auto;
 	padding: 10px;
 }
@@ -53,6 +52,7 @@ body {
 h2 {
 	text-align: center;
 	font-size: 20px;
+	color: blue;
 }
 
 #footer {
