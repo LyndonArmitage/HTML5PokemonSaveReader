@@ -9,6 +9,7 @@
 body {
   font-family: 'PressStart2P', Lucida Console, sans-serif;
   background: blue;
+  color: #fff;
 }
 
 .btn {
@@ -42,6 +43,7 @@ body {
 	background: rgb(255, 215, 0);
 	margin: 10px auto;
 	padding: 10px;
+	color: blue;
 }
 
 #error {
@@ -58,7 +60,6 @@ h1 {
 h2 {
 	text-align: center;
 	font-size: 20px;
-	color: blue;
 }
 
 #footer {
