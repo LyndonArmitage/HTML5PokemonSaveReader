@@ -14,7 +14,7 @@ body {
 
 #inputSection {
 	margin: 10px auto;
-	width: 480px;
+	width: 240px;
 	height: 120px;
 }
 
@@ -33,7 +33,7 @@ body {
 #inputLabel {
 	background: rgb(255, 215, 0);
 	color: blue;
-	float: left;
+	display: inline-block;
 }
 
 .center-btn {
@@ -45,16 +45,14 @@ body {
 }
 
 .upload-divisory {
-	border-right: 2px solid blue;
-	width: 10px;
-	height: 100px;
-	float: left;
+	border-bottom: 2px solid blue;
+	width: 238px;
+	display: block;
+	margin: 10px 0 10px 0;
 }
 
 .dragndrop-text {
-	position: relative;
-	top: 40px;
-	left: 10px;
+	text-align: center;
 }
 
 #saveButton {
