@@ -12,6 +12,12 @@ body {
   color: #fff;
 }
 
+#inputSection {
+	margin: 10px auto;
+	width: 480px;
+	height: 120px;
+}
+
 .btn {
 	padding: 10px;
 	border: blue outset 2px;
