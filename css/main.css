@@ -90,3 +90,31 @@ h2 {
 	text-align: center;
 	font-size: 12px;
 }
+
+#inputSection.active {
+    margin: 10px auto;
+    width: 574px;
+    height: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px dotted;
+}
+
+#inputLabel.active {
+    float: left;
+    padding: 10px 10px 10px 10px;
+}
+
+.upload-divisory.active {
+    border-bottom: none;
+    border-right: 2px solid blue;
+    width: 10px;
+    height: 40px;
+    margin: auto;
+    float: left;
+}
+
+.dragndrop-text.active {
+    position: relative;
+    top: 12px;
+    left: 10px;
+}

@@ -50,7 +50,7 @@ function readFile(savefile) {
 
 	reader.onload = (function(theFile) {
 		return function(e) {
-			$("#outputSection").html("<h2>"+ theFile.name +" loaded</h2>");
+			$("#outputSection").html("<div id='inputSection' class='active'><span id='inputLabel' class='btn center-btn active'>Select another Save File</span><div class='upload-divisory active'></div><span class='dragndrop-text active'>Too you can drag and drop here.</span><!--<div id='saveButton' class='btn'>Save Out File</div>--><input type='file' id='fileInput' name='savefile' style='display:none'></div><h2>"+ theFile.name +" loaded</h2>");
 			var results = parseSav(e.target.result);
 			if(results.checksum === 0) {
 				error("Invalid save file provided. Is it a Generation I save file?");
