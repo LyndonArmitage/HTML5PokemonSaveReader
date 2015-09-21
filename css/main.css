@@ -45,6 +45,12 @@ body {
 	float: left;
 }
 
+.dragndrop-text {
+	position: relative;
+	top: 40px;
+	left: 10px;
+}
+
 #saveButton {
 	background: blue;
 }
