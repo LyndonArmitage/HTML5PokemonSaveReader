@@ -30,6 +30,13 @@ body {
 	float: left;
 }
 
+.center-btn {
+	left: 560px;
+	padding: 40px 40px 40px 40px;
+}
+
+.left-btn {
+}
 
 #saveButton {
 	background: blue;
