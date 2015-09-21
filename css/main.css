@@ -38,6 +38,13 @@ body {
 .left-btn {
 }
 
+.upload-divisory {
+	border-right: 2px solid blue;
+	width: 10px;
+	height: 100px;
+	float: left;
+}
+
 #saveButton {
 	background: blue;
 }
