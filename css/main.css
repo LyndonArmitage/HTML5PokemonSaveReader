@@ -89,7 +89,12 @@ h2 {
 footer {
 	text-align: center;
 	font-size: 12px;
+	background: rgb(255, 215, 0);
 	color: blue;
+	border: blue groove 2px;
+	box-shadow: 0px 0px 0px 1px #fff;
+	padding: 10px;
+	box-sizing: border-box;
 }
 
 #inputSection.active {
