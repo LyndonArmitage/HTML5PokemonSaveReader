@@ -57,17 +57,17 @@ function readFile(savefile) {
 			}
 			else {
 				console.log(results);
-				var resultsContents = "<ul id='results'>"+
-						"<li><b>Trainer Name:</b> " + results.trainerName + "</li>"+
+				var resultsContents = "<ul class='tabs center'><li class='first current'><a href='#tabc1'>Trainer</a></li><li class=''><a href='#tabc2'>Items</a></li><li class=''><a href='#tabc3'>Party</a></li><li class='last'><a href='#tabc4'>Pokédex</a></li></ul><ul id='results'>"+
+						"<tab id='tabc1' class='tab-content clearfix' style='display: block;'><li><b>Trainer Name:</b> " + results.trainerName + "</li>"+
 						"<li><b>Trainer ID:</b> " + results.trainerID + "</li>"+
 						"<li><b>Rival Name:</b> " + results.rivalName + "</li>"+
 						"<li><b>Time Played:</b> " + results.timePlayed.hours +":"+ results.timePlayed.minutes + ":" + results.timePlayed.seconds + "</li>"+
 						"<li><b>Money:</b> " + results.money + "</li>"+
 						"<li><b>Checksum:</b> " + results.checksum + "</li>"+
-						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li>";
+						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li></tab>";
 
 				function addItemList(label, items) {
-					resultsContents += "<li><b>"+label+": </b>";
+					resultsContents += "<tab id='tabc2' class='tab-content clearfix' style='display: none;'><li><b>"+label+": </b>";
 					if(items.count > 0) {
 						var html = "<ul>";
 						for(var i = 0; i < items.count; i ++) {
@@ -77,14 +77,14 @@ function readFile(savefile) {
 						html +="</ul>";
 						resultsContents += html;
 					}
-					resultsContents += "</li>";
+					resultsContents += "</li></tab>";
 				}
 
 				addItemList("Bag Items", results.bagItemList);
 				addItemList("PC Items", results.PCItemList);
 
 				function addPokemonList(label, list) {
-					resultsContents += "<li><b>"+label+":</b>";
+					resultsContents += "<tab id='tabc3' class='tab-content clearfix' style='display: none;'><li><b>"+label+":</b>";
 					if(list.count > 0) {
 						resultsContents += "<ol>";
 						for(var i = 0; i < list.count; i ++) {
@@ -109,7 +109,7 @@ function readFile(savefile) {
 						}
 						resultsContents += "</ol>";
 					}
-					resultsContents += "</li>";
+					resultsContents += "</li></tab>";
 				}
 
 				addPokemonList("Party Pok&#233;mon", results.partyList);
@@ -122,13 +122,13 @@ function readFile(savefile) {
 							num ++;
 						}
 					}
-					resultsContents += "<li><b>"+label+": </b>"+ num +"</li>";
+					resultsContents += "<tab id='tabc4' class='tab-content clearfix' style='display: none;'><li><b>"+label+": </b>"+ num +"</li>";
 				}
 
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
 				addPokedexList("Pok&#233;dex Owned", results.ownedList);
 
-				resultsContents += "</ul>";
+				resultsContents += "</ul></tab>";
 				$("#outputSection").append(resultsContents);
 
 			}
@@ -149,54 +149,3 @@ function loadFile(evt) {
 		error("Invalid save file provided. File size or extension is wrong.");
 	}
 }
-
-/*
-	Tabs menu from kickstart.js, which part of 99Lime.com HTML KickStart by Joshua Gatcke.
-*/
-
-jQuery(document).ready(function($){
-
-	/*---------------------------------
-		Tabs
-	-----------------------------------*/
-	// tab setup
-	$('.tab-content').addClass('clearfix').not(':first').hide();
-	$('ul.tabs').each(function(){
-		var current = $(this).find('li.current');
-		if(current.length < 1) { $(this).find('li:first').addClass('current'); }
-		current = $(this).find('li.current a').attr('href');
-		$(current).show();
-	});
-
-	// tab click
-	$(document).on('click', 'ul.tabs a[href^="#"]', function(e){
-		e.preventDefault();
-		var tabs = $(this).parents('ul.tabs').find('li');
-		var tab_next = $(this).attr('href');
-		var tab_current = tabs.filter('.current').find('a').attr('href');
-		$(tab_current).hide();
-		tabs.removeClass('current');
-		$(this).parent().addClass('current');
-		$(tab_next).show();
-		history.pushState( null, null, window.location.search + $(this).attr('href') );
-		return false;
-	});
-
- 	// tab hashtag identification and auto-focus
-    	var wantedTag = window.location.hash;
-    	if (wantedTag != "")
-    	{
-			// This code can and does fail, hard, killing the entire app.
-			// Esp. when used with the jQuery.Address project.
-			try {
-				var allTabs = $("ul.tabs a[href^=" + wantedTag + "]").parents('ul.tabs').find('li');
-				var defaultTab = allTabs.filter('.current').find('a').attr('href');
-				$(defaultTab).hide();
-				allTabs.removeClass('current');
-				$("ul.tabs a[href^=" + wantedTag + "]").parent().addClass('current');
-				$("#" + wantedTag.replace('#','')).show();
-			} catch(e) {
-				// I have no idea what to do here, so I'm leaving this for the maintainer.
-			}
-    	}
-});
