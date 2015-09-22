@@ -169,3 +169,7 @@ ul.tabs li.current a {
     border-bottom: 3px solid blue;
     font-weight: bold;
 }
+
+modern {
+    display : none;
+}
