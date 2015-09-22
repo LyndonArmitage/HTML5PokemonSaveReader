@@ -80,7 +80,7 @@ function readFile(savefile) {
 					resultsContents += "</li>";
 				}
 
-				addItemList("Pocket Items", results.pocketItemList);
+				addItemList("Bag Items", results.bagItemList);
 				addItemList("PC Items", results.PCItemList);
 
 				function addPokedexList(label, list) {

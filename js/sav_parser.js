@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 JavaScript Based Pokemon Save File viewer by Lyndon Armitage 2013
 ---
@@ -11,7 +11,7 @@ This will make use of HTML5's File API so will not work in older browsers.
  * Will Take in a binary string and return an object representing the save data gleamed from it.<br/>
  * Currently only supports Generation 1 save files (Yellow, Red and Blue)
  * @param data
- * @returns {{trainerName: *, rivalName: *, trainerID: *, timePlayed: *, pocketItemList: *, PCItemList: *, checksum: *}}
+ * @returns {{trainerName: *, rivalName: *, trainerID: *, timePlayed: *, bagItemList: *, PCItemList: *, checksum: *}}
  */
 function parseSav(data) {
 	// lets test getting the trainer name data
@@ -44,7 +44,7 @@ function parseSav(data) {
 		};
 	}
 
-	function getPocketItemList() {
+	function getBagItemList() {
 		// Can hold 20 items making the size 42 because: Capacity * 2 + 2 = 42
 		return getItemList(0x25C9, 20);
 	}
@@ -531,7 +531,7 @@ function parseSav(data) {
 		rivalName: getRivalName(),
 		trainerID: getTrainerID(),
 		timePlayed : getTimePlayed(),
-		pocketItemList : getPocketItemList(),
+		bagItemList : getBagItemList(),
 		PCItemList : getPCItemList(),
 		checksum : getChecksum(),
 		money : getMoney(),
