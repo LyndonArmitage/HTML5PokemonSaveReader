@@ -173,3 +173,22 @@ ul.tabs li.current a {
 modern {
     display : none;
 }
+
+@media(max-width:480px) {
+#inputSection.active {
+    width: 314px!important;
+    height: 100px!important;
+}
+#inputLabel.active {
+    float: none!important;
+}
+.upload-divisory.active {
+    border-right: none!important;
+    border-bottom: 2px solid blue!important;
+    width: 256px!important;
+    height: 0!important;
+    display: block!important;
+    margin: 10px 0 10px 0!important;
+    float: none!important;
+}
+}
