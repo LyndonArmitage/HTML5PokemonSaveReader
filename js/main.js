@@ -78,13 +78,16 @@ function readFile(savefile) {
 						resultsContents += html;
 					}
 					resultsContents += "</li>";
+
 				}
 
 				addItemList("Bag Items", results.bagItemList);
 				addItemList("PC Items", results.PCItemList);
 
+							resultsContents += "</tab><tab id='tabc3' class='tab-content clearfix' style='display: none;'>";
+
 				function addPokemonList(label, list) {
-					resultsContents += "</tab><tab id='tabc3' class='tab-content clearfix' style='display: none;'><li><b>"+label+":</b>";
+					resultsContents += "<li><b>"+label+":</b>";
 					if(list.count > 0) {
 						resultsContents += "<ol>";
 						for(var i = 0; i < list.count; i ++) {
@@ -101,7 +104,7 @@ function readFile(savefile) {
 								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].partyLevel+"</li>";
 							}
 							else {
-								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].level+"</li>";
+								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].level+"</li></tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'>";
 							}
 							resultsContents += "</ul>";
 
@@ -115,6 +118,8 @@ function readFile(savefile) {
 				addPokemonList("Party Pok&#233;mon", results.partyList);
 				addPokemonList("Current Box Pok&#233;mon", results.currentBoxList);
 
+							resultsContents += "</tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'>";
+
 				function addPokedexList(label, list) {
 					var num = 0;
 					for(var i = 0; i < list.length; i ++) {
@@ -122,7 +127,7 @@ function readFile(savefile) {
 							num ++;
 						}
 					}
-					resultsContents += "</tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'><li><b>"+label+": </b>"+ num +"</li>";
+					resultsContents += "<li><b>"+label+": </b>"+ num +"</li>";
 				}
 
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
