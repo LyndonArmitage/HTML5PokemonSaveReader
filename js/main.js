@@ -133,7 +133,7 @@ function readFile(savefile) {
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
 				addPokedexList("Pok&#233;dex Owned", results.ownedList);
 
-				resultsContents += "</tab></ul>";
+				resultsContents += "<span>Soon, will show each pokémon and you will can mark each one as seen/owned.</span></tab></ul>";
 				$("#outputSection").append(resultsContents);
 
 			}
