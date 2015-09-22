@@ -106,6 +106,10 @@ footer a:hover {
 	opacity: 1;
 }
 
+a img {
+	margin-left: 10px;
+}
+
 #inputSection.active {
     margin: 10px auto;
     width: 574px;
