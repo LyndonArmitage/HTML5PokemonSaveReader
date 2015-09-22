@@ -60,7 +60,7 @@ body {
 }
 
 #outputSection {
-	min-height: 182px;
+	min-height: 162px;
 	border: blue groove 2px;
 	box-shadow: 0px 0px 0px 1px #fff;
 	border-radius: 20px;
