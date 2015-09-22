@@ -83,19 +83,6 @@ function readFile(savefile) {
 				addItemList("Bag Items", results.bagItemList);
 				addItemList("PC Items", results.PCItemList);
 
-				function addPokedexList(label, list) {
-					var num = 0;
-					for(var i = 0; i < list.length; i ++) {
-						if(list.charAt(i) == "1") {
-							num ++;
-						}
-					}
-					resultsContents += "<li><b>"+label+": </b>"+ num +"</li>";
-				}
-
-				addPokedexList("Pok&#233;dex Seen", results.seenList);
-				addPokedexList("Pok&#233;dex Owned", results.ownedList);
-
 				function addPokemonList(label, list) {
 					resultsContents += "<li><b>"+label+":</b>";
 					if(list.count > 0) {
@@ -127,6 +114,19 @@ function readFile(savefile) {
 
 				addPokemonList("Party Pok&#233;mon", results.partyList);
 				addPokemonList("Current Box Pok&#233;mon", results.currentBoxList);
+
+				function addPokedexList(label, list) {
+					var num = 0;
+					for(var i = 0; i < list.length; i ++) {
+						if(list.charAt(i) == "1") {
+							num ++;
+						}
+					}
+					resultsContents += "<li><b>"+label+": </b>"+ num +"</li>";
+				}
+
+				addPokedexList("Pok&#233;dex Seen", results.seenList);
+				addPokedexList("Pok&#233;dex Owned", results.ownedList);
 
 				resultsContents += "</ul>";
 				$("#outputSection").append(resultsContents);
