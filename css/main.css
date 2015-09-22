@@ -118,3 +118,54 @@ h2 {
     top: 12px;
     left: 10px;
 }
+
+ul.tabs.center {
+    text-align: center;
+}
+
+ul.tabs {
+    margin: 10px 0 -1px 0;
+    padding: 0;
+    width: 100%;
+    border-bottom: 1px solid blue;
+    float: left;
+    font-size: 0;
+    margin-bottom: 10px;
+}
+
+ul.tabs li {
+    font-size: 14px;
+    list-style-type: none;
+    margin: 0 -2px 0 0;
+    padding: 0;
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 0;
+    zoom: 1;
+}
+
+ul.tabs li a {
+    text-decoration: none;
+    color: rgba(0, 0, 255, 0.5);
+    display: inline-block;
+    padding: 9px 15px;
+    position: relative;
+    top: 0;
+    left: 0;
+    line-height: 100%;
+    border-bottom: 0;
+    font-size: 0.9em;
+    zoom: 1;
+}
+
+ul.tabs li.current a {
+    position: relative;
+    left: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: blue;
+    border-bottom: 3px solid blue;
+    font-weight: bold;
+}
