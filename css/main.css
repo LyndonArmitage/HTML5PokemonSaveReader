@@ -97,6 +97,15 @@ footer {
 	box-sizing: border-box;
 }
 
+footer a {
+	color: blue;
+	opacity: 0.5;
+}
+
+footer a:hover {
+	opacity: 1;
+}
+
 #inputSection.active {
     margin: 10px auto;
     width: 574px;
