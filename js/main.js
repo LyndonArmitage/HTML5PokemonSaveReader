@@ -64,10 +64,10 @@ function readFile(savefile) {
 						"<li><b>Time Played:</b> " + results.timePlayed.hours +":"+ results.timePlayed.minutes + ":" + results.timePlayed.seconds + "</li>"+
 						"<li><b>Money:</b> " + results.money + "</li>"+
 						"<li><b>Checksum:</b> " + results.checksum + "</li>"+
-						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li></tab>";
+						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li></tab><tab id='tabc2' class='tab-content clearfix' style='display: none;'>";
 
 				function addItemList(label, items) {
-					resultsContents += "<tab id='tabc2' class='tab-content clearfix' style='display: none;'><li><b>"+label+": </b>";
+					resultsContents += "<li><b>"+label+": </b>";
 					if(items.count > 0) {
 						var html = "<ul>";
 						for(var i = 0; i < items.count; i ++) {
@@ -77,14 +77,14 @@ function readFile(savefile) {
 						html +="</ul>";
 						resultsContents += html;
 					}
-					resultsContents += "</li></tab>";
+					resultsContents += "</li>";
 				}
 
 				addItemList("Bag Items", results.bagItemList);
 				addItemList("PC Items", results.PCItemList);
 
 				function addPokemonList(label, list) {
-					resultsContents += "<tab id='tabc3' class='tab-content clearfix' style='display: none;'><li><b>"+label+":</b>";
+					resultsContents += "</tab><tab id='tabc3' class='tab-content clearfix' style='display: none;'><li><b>"+label+":</b>";
 					if(list.count > 0) {
 						resultsContents += "<ol>";
 						for(var i = 0; i < list.count; i ++) {
@@ -109,7 +109,7 @@ function readFile(savefile) {
 						}
 						resultsContents += "</ol>";
 					}
-					resultsContents += "</li></tab>";
+					resultsContents += "</li>";
 				}
 
 				addPokemonList("Party Pok&#233;mon", results.partyList);
@@ -122,13 +122,13 @@ function readFile(savefile) {
 							num ++;
 						}
 					}
-					resultsContents += "<tab id='tabc4' class='tab-content clearfix' style='display: none;'><li><b>"+label+": </b>"+ num +"</li>";
+					resultsContents += "</tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'><li><b>"+label+": </b>"+ num +"</li>";
 				}
 
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
 				addPokedexList("Pok&#233;dex Owned", results.ownedList);
 
-				resultsContents += "</ul></tab>";
+				resultsContents += "</tab></ul>";
 				$("#outputSection").append(resultsContents);
 
 			}
