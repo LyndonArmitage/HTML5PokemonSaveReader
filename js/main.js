@@ -82,9 +82,11 @@ function readFile(savefile) {
 					resultsContents += "</li>";
 
 				}
-
+							resultsContents += "<tab id='tab-items_bag' class='tab-content clearfix' style='display: inline;'>";
 				addItemList("Bag Items", results.bagItemList);
+							resultsContents += "</tab><tab id='tab-items_pc' class='tab-content clearfix' style='display: none;'>";
 				addItemList("PC Items", results.PCItemList);
+							resultsContents += "</tab>";
 
 							resultsContents += "</tab><tab id='tabc3' class='tab-content clearfix' style='display: none;'>";
 
