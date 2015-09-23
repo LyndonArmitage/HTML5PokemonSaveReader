@@ -240,6 +240,23 @@ footer a:hover {
 	overflow-y: overlay;
 }
 
+.return {
+	float: left;
+	font-size: 30px;
+	margin: 10px 0 0 10px;
+	cursor: pointer;
+	-webkit-filter: opacity(0.5);
+}
+
+.return:hover {
+	-webkit-filter: opacity(1.0);
+}
+
+.return:active {
+	color: #0A2480;
+	-webkit-filter: opacity(1.0);
+}
+
 a img {
 	margin-left: 10px;
 }
