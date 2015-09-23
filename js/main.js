@@ -59,7 +59,7 @@ function readFile(savefile) {
 			}
 			else {
 				console.log(results);
-				var resultsContents = "<ul class='tabs center'><li class='first current'><a href='#tabc1'>Trainer</a></li><li class=''><a href='#tabc2'>Items</a></li><li class=''><a href='#tabc3'>Party</a></li><li class='last'><a href='#tabc4'>Pokédex</a></li></ul><ul id='results'>"+
+				var resultsContents = "<ul class='tabs center'><li class='first current'><a href='#tabc1'>Trainer</a></li><li class=''><a href='#tabc2'>Items</a></li><li class=''><a href='#tabc3'>Pokémons</a></li><li class='last'><a href='#tabc4'>Pokédex</a></li></ul><ul id='results'>"+
 						"<tab id='tabc1' class='tab-content clearfix' style='display: block;'><li><b>Trainer Name:</b> " + results.trainerName + "</li>"+
 						"<li><b>Trainer ID:</b> " + results.trainerID + "</li>"+
 						"<li><b>Rival Name:</b> " + results.rivalName + "</li>"+
@@ -87,10 +87,9 @@ function readFile(savefile) {
 				addItemList("PC Items", results.PCItemList);
 							resultsContents += "</tab>";
 
-							resultsContents += "</tab><tab id='tabc3' class='tab-content clearfix' style='display: none;'>";
+							resultsContents += "</tab><tab id='tabc3' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-pokemons_party'>Party</a></li><li class=''><a href='#tab-pokemons_pc'>Bill's PC</a></li></ul><tab id='tab-pokemons_party' class='tab-content clearfix' style='display: inline;'>";
 
 				function addPokemonList(label, list) {
-					resultsContents += "<li><b>"+label+":</b>";
 					if(list.count > 0) {
 						resultsContents += "<ol>";
 						for(var i = 0; i < list.count; i ++) {
@@ -107,7 +106,7 @@ function readFile(savefile) {
 								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].partyLevel+"</li>";
 							}
 							else {
-								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].level+"</li></tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'>";
+								resultsContents += "<li><b>Level: </b>"+list.pokemon[i].level+"</li>";
 							}
 							resultsContents += "</ul>";
 
@@ -117,11 +116,11 @@ function readFile(savefile) {
 					}
 					resultsContents += "</li>";
 				}
-
 				addPokemonList("Party Pok&#233;mon", results.partyList);
+							resultsContents += "</tab><tab id='tab-pokemons_pc' class='tab-content clearfix' style='display: none;'>";
 				addPokemonList("Current Box Pok&#233;mon", results.currentBoxList);
 
-							resultsContents += "</tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'>";
+							resultsContents += "</tab></tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'>";
 
 				function addPokedexList(label, list) {
 					var num = 0;
