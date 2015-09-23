@@ -120,7 +120,7 @@ function readFile(savefile) {
 							resultsContents += "</tab><tab id='tab-pokemons_pc' class='tab-content clearfix' style='display: none;'>";
 				addPokemonList("Current Box Pok&#233;mon", results.currentBoxList);
 
-							resultsContents += "</tab></tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'>";
+							resultsContents += "</tab></tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-pokedex_all'>All</a></li><li class=''><a href='#tab-pokedex_seen'>Seen</a></li><li class=''><a href='#tab-pokedex_owned'>Owned</a></li></ul>";
 
 				function addPokedexList(label, list) {
 					var num = 0;
@@ -132,10 +132,15 @@ function readFile(savefile) {
 					resultsContents += "<li><b>"+label+": </b>"+ num +"</li>";
 				}
 
+				resultsContents += "<tab id='tab-pokedex_all' class='tab-content clearfix' style='display: inline;'>";
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
 				addPokedexList("Pok&#233;dex Owned", results.ownedList);
+				resultsContents += "<span>Soon, this app will show each pokémon and you will can mark each one as seen/owned. And here, will have an complete list with all pokémons in your Pokédex</span></tab><tab id='tab-pokedex_seen' class='tab-content clearfix' style='display: none;'>";
+				addPokedexList("Pok&#233;dex Seen", results.seenList);
+				resultsContents += "</tab><tab id='tab-pokedex_owned' class='tab-content clearfix' style='display: none;'>";
+				addPokedexList("Pok&#233;dex Owned", results.ownedList);
 
-				resultsContents += "<span>Soon, will show each pokémon and you will can mark each one as seen/owned.</span></tab></ul>";
+				resultsContents += "</tab></tab></ul>";
 				$("#outputSection").append(resultsContents);
 
 			}
