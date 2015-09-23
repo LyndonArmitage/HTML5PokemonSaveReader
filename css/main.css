@@ -213,6 +213,25 @@ footer a:hover {
 	opacity: 1;
 }
 
+.menus {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.menus div {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: rgb(255, 220, 30);
+	color: #3350B3;
+	pointer-events: all;
+}
+
 a img {
 	margin-left: 10px;
 }
