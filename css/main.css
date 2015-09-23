@@ -20,7 +20,7 @@ header {
     width: 100% !important;
     height: 60px;
     box-shadow: 0 0 15px 1px black;
-    z-index: 3;
+    z-index: 4;
 }
 
 header:hover {
