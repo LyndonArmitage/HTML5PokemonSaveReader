@@ -284,6 +284,12 @@ modern {
 	height: 100%;
 }
 ul.tabs.toptab {
-    display: none;
+	display: none;
+	position: fixed;
+	top: -27px;
+	left: 0;
+	background: rgb(255, 220, 30);
+	width: 100%;
+	height: 100%;
 }
 }
