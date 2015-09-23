@@ -279,5 +279,8 @@ modern {
 }
 
 @media(max-width:480px) {
-
+#navmenu {
+	width: 100%;
+	height: 100%;
+}
 }
