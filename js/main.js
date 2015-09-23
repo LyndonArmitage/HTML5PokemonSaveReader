@@ -69,7 +69,6 @@ function readFile(savefile) {
 						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li><span>Soon, you'll can get your badges and coins.</span></tab><tab id='tabc2' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-items_bag'>Bag</a></li><li class=''><a href='#tab-items_pc'>PC</a></li></ul>";
 
 				function addItemList(label, items) {
-					resultsContents += "<li><b>"+label+": </b>";
 					if(items.count > 0) {
 						var html = "<ul>";
 						for(var i = 0; i < items.count; i ++) {
