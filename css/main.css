@@ -336,4 +336,11 @@ ul.tabs.toptab {
 	width: 100%;
 	height: 100%;
 }
+.return {
+	float: none;
+}
+.scroller {
+	height: calc(100% - 142px);
+	top: 142px;
+}
 }
