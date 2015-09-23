@@ -283,4 +283,7 @@ modern {
 	width: 100%;
 	height: 100%;
 }
+ul.tabs.toptab {
+    display: none;
+}
 }
