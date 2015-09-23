@@ -135,7 +135,7 @@ function readFile(savefile) {
 				resultsContents += "<tab id='tab-pokedex_all' class='tab-content clearfix' style='display: inline;'>";
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
 				addPokedexList("Pok&#233;dex Owned", results.ownedList);
-				resultsContents += "<span>Soon, this app will show each pokémon and you will can mark each one as seen/owned. And here, will have an complete list with all pokémons in your Pokédex</span></tab><tab id='tab-pokedex_seen' class='tab-content clearfix' style='display: none;'>";
+				resultsContents += "<span>Soon, this app will show each pokémon and you will can mark each one as seen/owned. And here, will have an complete list with all pokémons that have in your Pokédex</span></tab><tab id='tab-pokedex_seen' class='tab-content clearfix' style='display: none;'>";
 				addPokedexList("Pok&#233;dex Seen", results.seenList);
 				resultsContents += "</tab><tab id='tab-pokedex_owned' class='tab-content clearfix' style='display: none;'>";
 				addPokedexList("Pok&#233;dex Owned", results.ownedList);
