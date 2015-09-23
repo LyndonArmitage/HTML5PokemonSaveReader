@@ -217,34 +217,6 @@ a img {
 	margin-left: 10px;
 }
 
-#inputSection.active {
-    margin: 10px auto;
-    width: 574px;
-    height: 40px;
-    padding-bottom: 10px;
-    border-bottom: 2px dotted;
-}
-
-#inputLabel.active {
-    float: left;
-    padding: 10px 10px 10px 10px;
-}
-
-.upload-divisory.active {
-    border-bottom: none;
-    border-right: 2px solid #3350B3;
-    width: 10px;
-    height: 40px;
-    margin: auto;
-    float: left;
-}
-
-.dragndrop-text.active {
-    position: relative;
-    top: 12px;
-    left: 10px;
-}
-
 ul.tabs.center {
     text-align: center;
 }
@@ -307,20 +279,5 @@ modern {
 }
 
 @media(max-width:480px) {
-#inputSection.active {
-    width: 314px!important;
-    height: 76px!important;
-}
-#inputLabel.active {
-    float: none!important;
-}
-.upload-divisory.active {
-    border-right: none!important;
-    border-bottom: 2px solid #3350B3!important;
-    width: 256px!important;
-    height: 0!important;
-    display: block!important;
-    margin: 10px 0 -4px 0!important;
-    float: none!important;
-}
+
 }
