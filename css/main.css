@@ -7,9 +7,10 @@
 }
 
 body {
-  font-family: 'PressStart2P', Lucida Console, sans-serif;
-  background: blue;
-  color: #fff;
+	font-family: 'PressStart2P', Lucida Console, sans-serif;
+	background: blue;
+	color: #fff;
+	margin: 0;
 }
 
 header {
