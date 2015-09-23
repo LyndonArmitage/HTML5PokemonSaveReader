@@ -8,13 +8,13 @@
 
 body {
 	font-family: 'PressStart2P', Lucida Console, sans-serif;
-	background: blue;
+	background: #3350B3;
 	color: #fff;
 	margin: 0;
 }
 
 header {
-    background: rgb(255, 215, 0);
+    background: rgb(255, 220, 30);
     position: fixed;
     top: 0;
     width: 100% !important;
@@ -46,7 +46,7 @@ header:hover {
 }
 
 .navlocal {
-    color: blue;
+    color: #3350B3;
     position: absolute;
     top: 16px;
     margin-left: 65px;
@@ -65,7 +65,7 @@ header:hover {
 
 .btn {
 	padding: 10px;
-	border: blue outset 2px;
+	border: #3350B3 outset 2px;
 	text-align: center;
 	border-radius: 10px;
 	cursor: pointer;
@@ -76,7 +76,7 @@ header:hover {
 }
 
 #inputLabel {
-	color: blue;
+	color: #3350B3;
 	display: inline-block;
 }
 
@@ -89,7 +89,7 @@ header:hover {
 }
 
 .upload-divisory {
-	border-bottom: 2px solid blue;
+	border-bottom: 2px solid #3350B3;
 	width: 238px;
 	display: block;
 	margin: 10px 0 10px 0;
@@ -100,18 +100,18 @@ header:hover {
 }
 
 #saveButton {
-	background: blue;
+	background: #3350B3;
 }
 
 .outputSection {
 	min-height: 162px;
-	border: blue groove 2px;
+	border: #3350B3 groove 2px;
 	box-shadow: 0px 0px 0px 1px #fff;
 	border-radius: 20px;
-	background: rgb(255, 215, 0);
+	background: rgb(255, 220, 30);
 	margin: 124px 10px 40px 10px;
 	padding: 10px;
-	color: blue;
+	color: #3350B3;
 }
 
 #error {
@@ -133,16 +133,16 @@ h2 {
 footer {
 	text-align: center;
 	font-size: 12px;
-	background: rgb(255, 215, 0);
-	color: blue;
-	border: blue groove 2px;
+	background: rgb(255, 220, 30);
+	color: #3350B3;
+	border: #3350B3 groove 2px;
 	box-shadow: 0px 0px 0px 1px #fff;
 	padding: 10px;
 	box-sizing: border-box;
 }
 
 footer a {
-	color: blue;
+	color: #3350B3;
 	opacity: 0.5;
 }
 
@@ -169,7 +169,7 @@ a img {
 
 .upload-divisory.active {
     border-bottom: none;
-    border-right: 2px solid blue;
+    border-right: 2px solid #3350B3;
     width: 10px;
     height: 40px;
     margin: auto;
@@ -190,7 +190,7 @@ ul.tabs {
     margin: 10px 0 -1px 0;
     padding: 0;
     width: 100%;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid #3350B3;
     float: left;
     font-size: 0;
     margin-bottom: 10px;
@@ -228,8 +228,8 @@ ul.tabs li.current a {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    color: blue;
-    border-bottom: 3px solid blue;
+    color: #3350B3;
+    border-bottom: 3px solid #3350B3;
     font-weight: bold;
 }
 
@@ -253,7 +253,7 @@ modern {
 }
 .upload-divisory.active {
     border-right: none!important;
-    border-bottom: 2px solid blue!important;
+    border-bottom: 2px solid #3350B3!important;
     width: 256px!important;
     height: 0!important;
     display: block!important;
