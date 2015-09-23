@@ -104,7 +104,7 @@ header:hover {
 	background: blue;
 }
 
-#outputSection {
+.outputSection {
 	min-height: 162px;
 	border: blue groove 2px;
 	box-shadow: 0px 0px 0px 1px #fff;
@@ -232,6 +232,12 @@ ul.tabs li.current a {
     color: blue;
     border-bottom: 3px solid blue;
     font-weight: bold;
+}
+
+ul.tabs.toptab {
+    margin-top: 27px;
+    border: none;
+    float: none;
 }
 
 modern {
