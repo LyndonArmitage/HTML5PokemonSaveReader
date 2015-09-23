@@ -66,7 +66,7 @@ function readFile(savefile) {
 						"<li><b>Time Played:</b> " + results.timePlayed.hours +":"+ results.timePlayed.minutes + ":" + results.timePlayed.seconds + "</li>"+
 						"<li><b>Money:</b> " + results.money + "</li>"+
 						"<li><b>Checksum:</b> " + results.checksum + "</li>"+
-						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li><span>Soon, you'll can get your badges and coins.</span></tab><tab id='tabc2' class='tab-content clearfix' style='display: none;'>";
+						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li><span>Soon, you'll can get your badges and coins.</span></tab><tab id='tabc2' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-items_bag'>Bag</a></li><li class=''><a href='#tab-items_pc'>PC</a></li></ul>";
 
 				function addItemList(label, items) {
 					resultsContents += "<li><b>"+label+": </b>";
