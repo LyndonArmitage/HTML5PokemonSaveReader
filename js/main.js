@@ -83,9 +83,9 @@ function readFile(savefile) {
 				}
 							resultsContents += "<tab id='tab-items_bag' class='tab-content clearfix' style='display: inline;'>";
 				addItemList("Bag Items", results.bagItemList);
-							resultsContents += "</tab><tab id='tab-items_pc' class='tab-content clearfix' style='display: none;'>";
+							resultsContents += "Soon, you'll can transfer items from Bag to PC.</tab><tab id='tab-items_pc' class='tab-content clearfix' style='display: none;'>";
 				addItemList("PC Items", results.PCItemList);
-							resultsContents += "</tab>";
+							resultsContents += "Soon, you'll can transfer items from PC to Bag.</tab>";
 
 							resultsContents += "</tab><tab id='tabc3' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-pokemons_party'>Party</a></li><li class=''><a href='#tab-pokemons_pc'>Bill's PC</a></li></ul><tab id='tab-pokemons_party' class='tab-content clearfix' style='display: inline;'>";
 
