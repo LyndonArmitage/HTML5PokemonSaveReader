@@ -163,7 +163,7 @@ function loadFile(evt) {
 }
 
 /*
-	Tabs menu from kickstart.js, which part of 99Lime.com HTML KickStart by Joshua Gatcke.
+	Tabs menu from kickstart.js, which is part of 99Lime.com HTML KickStart by Joshua Gatcke.
 */
 
 jQuery(document).ready(function($){
