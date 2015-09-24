@@ -14,6 +14,7 @@ body {
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
+	cursor: default;
 }
 
 header {
@@ -334,7 +335,8 @@ ul.tabs.toptab {
 }
 
 .selectible {
-    -webkit-user-select: initial;
+	-webkit-user-select: initial;
+	cursor: text;
 }
 
 ::selection {
