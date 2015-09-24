@@ -337,6 +337,21 @@ ul.tabs.toptab {
 	float: none;
 }
 
+::selection {
+
+	background: #3350B3;
+	color: rgb(255, 220, 30);
+}
+
+
+::-moz-selection {
+
+	background: #3350B3;
+	color: rgb(255, 220, 30);
+
+}
+
+
 modern {
 	display : none;
 }
