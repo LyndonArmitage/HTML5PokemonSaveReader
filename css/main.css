@@ -290,6 +290,7 @@ ul.tabs li {
 ul.tabs li a {
     text-decoration: none;
     color: rgba(0, 0, 255, 0.5);
+    -webkit-filter: opacity(0.5);
     display: inline-block;
     padding: 9px 15px;
     position: relative;
@@ -301,6 +302,12 @@ ul.tabs li a {
     zoom: 1;
 }
 
+ul.tabs li a:hover {
+    -webkit-filter: opacity(0.5);
+    color: #3350B3;
+    border-bottom: 3px solid #3350B3;
+}
+
 ul.tabs li.current a {
     position: relative;
     left: 0;
@@ -308,8 +315,13 @@ ul.tabs li.current a {
     -moz-box-shadow: none;
     box-shadow: none;
     color: #3350B3;
+    -webkit-filter: opacity(1.0);
     border-bottom: 3px solid #3350B3;
     font-weight: bold;
+}
+
+ul.tabs li.current a:hover {
+    -webkit-filter: opacity(1.0);
 }
 
 ul.tabs.toptab {
