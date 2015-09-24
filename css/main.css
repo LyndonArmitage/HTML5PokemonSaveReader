@@ -264,10 +264,6 @@ a img {
 	margin-left: 10px;
 }
 
-li {
-	-webkit-user-select: initial;
-}
-
 ul.tabs.center {
 	text-align: center;
 }
@@ -335,6 +331,10 @@ ul.tabs.toptab {
 	margin-top: 27px;
 	border: none;
 	float: none;
+}
+
+.selectible {
+    -webkit-user-select: initial;
 }
 
 ::selection {
