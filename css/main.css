@@ -264,6 +264,10 @@ a img {
 	margin-left: 10px;
 }
 
+li {
+	-webkit-user-select: initial;
+}
+
 ul.tabs.center {
 	text-align: center;
 }
