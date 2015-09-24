@@ -11,6 +11,9 @@ body {
 	background: #3350B3;
 	color: #fff;
 	margin: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
 }
 
 header {
