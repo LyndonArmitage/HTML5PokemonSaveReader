@@ -206,6 +206,12 @@ body > .scroller {
 	color: #3350B3;
 }
 
+.over-file {
+	background: rgba(255, 255, 255, 0.5);
+	border: 4px dotted #3350B3;
+	box-shadow: none;
+}
+
 #error {
 	text-align: center;
 	color: red;
