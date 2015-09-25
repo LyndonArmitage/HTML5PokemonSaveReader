@@ -7,7 +7,7 @@
 	<link type="text/css" href="css/main.css" media="all" rel="stylesheet">
 </head>
 <body>
-	<notmodern><div class="tophotspot"></div><header id="header"><div class="topbar-current" onclick="$('#navmenu').toggle();return false"><img src="imgs/icon.png" class="icon"><span class="navlocal">Pokémon Save File Viewer</span></div><ul class="tabs toptab"><li class="first current"><a href="#tab1" id="savetitle">Welcome</a></li><li class=""><a href="#tab2">Soon</a></li><li class=""><a href="#tab3">Soon</a></li><li class="last"><a href="#tab4">Soon</a></li></ul></header><nav id="navmenu">
+	<notmodern><div class="tophotspot"></div><header id="header"><div class="topbar-current" title="Open the options menu" onclick="$('#navmenu').toggle();return false"><img src="imgs/icon.png" class="icon"><span class="navlocal">Pokémon Save File Viewer</span></div><ul class="tabs toptab"><li class="first current"><a href="#tab1" id="savetitle">Welcome</a></li><li class=""><a href="#tab2">Soon</a></li><li class=""><a href="#tab3">Soon</a></li><li class="last"><a href="#tab4">Soon</a></li></ul></header><nav id="navmenu">
 
 <ul class="tabs center"><li class="first current"><a href="#menutab1">Home</a></li><li class=""><a href="#menutab2">Soon</a></li><li class=""><a href="#menutab3">Soon</a></li>
 <li class=""><a href="#menutab4">Soon</a></li></ul>
@@ -16,7 +16,7 @@
 <a><li><div><img src="imgs/page.svg"></div><p>Soon</p>
 </li></a>
 <a><li><div><img src="imgs/page.svg"></div><p>Soon</p></li></a><a><li><div><img src="imgs/page.svg"></div><p>Soon</p></li></a>
-<a><li><div><img src="imgs/page.svg"></div><p>Changelog (Soon)</p></li></a><a><li onclick="$('#upcomming').toggle();return false"><div><img src="imgs/page.svg"></div><p>Upcomming features</p></li></a><a><li onclick="$('#about').toggle();return false"><div><img src="imgs/page.svg"></div><p>About</p></li></a>
+<a><li title="A log containing all changes historic in app and his respective contributors, version number and date"><div><img src="imgs/page.svg"></div><p>Changelog (Soon)</p></li></a><a><li title="A list containing comming features for this app, with user's suggestions" onclick="$('#upcomming').toggle();return false"><div><img src="imgs/page.svg"></div><p>Upcomming features</p></li></a><a><li title="A menu containing infos about this app, his contributors, credits and policy/licenses" onclick="$('#about').toggle();return false"><div><img src="imgs/page.svg"></div><p>About</p></li></a>
 </ul></tab>
 
 <tab id="menutab2" class="tab-content clearfix" style="display: none;">
@@ -46,7 +46,7 @@
 	<div id="outputSection" class="outputSection">
 		<notmodern><h2>Welcome! To begin editing:</h2></notmodern>
 		<div id="inputSection">
-		<span id='inputLabel' class="btn center-btn">Select Save File</span>
+		<span id='inputLabel' title='Browse here your computer for search the Save File you need read' class="btn center-btn">Select Save File</span>
 		<div class="upload-divisory"></div>
 		<div class="dragndrop-text">or drag and drop here.</div>
 		<!--<div id='saveButton' class="btn">Save Out File</div>-->
