@@ -374,6 +374,10 @@ ul.tabs#toptab {
 	float: none;
 }
 
+ul.tabs#toptab h1 {
+	display: none;
+}
+
 .selectible {
 	-webkit-user-select: initial;
 	cursor: text;
@@ -452,7 +456,14 @@ ul.tabs#toptab {
 	position: fixed;
 	top: -27px;
 	left: 0;
+	color: #3350B3;
 }
+
+ul.tabs#toptab h1 {
+	display: initial;
+	margin-top: -8px;
+}
+
 ul.tabs#toptab li {
 	border-top: 1px outset #3350B3;
 	border-bottom: 1px outset #3350B3;
@@ -461,14 +472,17 @@ ul.tabs#toptab li {
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+
 ul.tabs#toptab li:hover {
 	-webkit-filter: opacity(0.8);
 }
+
 ul.tabs#toptab li a {
 	border-bottom: none!important;
 	text-align: center;
 	padding-top: 3px;
 }
+
 ul.tabs#toptab li.more {
 	position: fixed !important;
 	left: initial !important;
@@ -479,6 +493,7 @@ ul.tabs#toptab li.more {
 	border-right: none;
 	margin: 0;
 }
+
 ul.tabs#toptab li.more:hover {
 	-webkit-filter: opacity(0.5);
 }
