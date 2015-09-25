@@ -172,7 +172,7 @@ header:hover {
 }
 
 .upload-divisory {
-	border-bottom: 2px solid #3350B3;
+	border-bottom: 2px outset #3350B3;
 	width: 238px;
 	display: block;
 	margin: 10px 0 10px 0;
@@ -188,7 +188,7 @@ header:hover {
 
 .outputSection {
 	min-height: 162px;
-	border: #3350B3 groove 2px;
+	border: 2px outset #3350B3;
 	box-shadow: 0px 0px 0px 1px #fff;
 	border-radius: 20px;
 	background: rgb(255, 220, 30);
