@@ -43,7 +43,7 @@ String.prototype.endsWith = function(suffix) {
 
 function error(msg) {
 	$("#outputSection").html("<div id='error'>"+msg+"</div><div id='inputSection'><span id='inputLabel' title='Browse here your computer for search the Save File you need read' class='btn center-btn'>Select another Save File</span><div class='upload-divisory'></div><div class='dragndrop-text'>or drag and drop here.</div><!--<div id='saveButton' class='btn'>Save Out File</div>--><input type='file' id='fileInput' name='savefile' style='display:none'></div>");
-	$("#button-tab1").html("<a href='#tab1' style='color:red;border-color:red'>Error!<div class='tab-preview'><span>"+msg+"</span></div></a>");
+	$("#button-tab1").html("<a href='#tab1' style='color:red;border-color:red'>Error!<div class='tab-preview' style='border-color:red'><span>"+msg+"</span></div></a>");
 }
 
 function readFile(savefile) {
