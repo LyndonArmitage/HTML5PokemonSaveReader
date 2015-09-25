@@ -7,10 +7,10 @@
 	<link type="text/css" href="css/main.css" media="all" rel="stylesheet">
 </head>
 <body>
-	<notmodern><div class="tophotspot"></div><header id="header"><div class="topbar-current" title="Open the options menu" onclick="$('#navmenu').toggle();return false"><img src="imgs/icon.png" class="icon"><span class="navlocal">Pokémon Save File Viewer</span></div><ul class="tabs toptab"><li class="first current"><a href="#tab1" id="savetitle">Welcome</a></li><li class=""><a href="#tab2">Soon</a></li><li class=""><a href="#tab3">Soon</a></li><li><a href="#tab4">Soon</a></li><li class="more" title="Add a new tab"><a>+</a></li></ul></header><nav id="navmenu">
+	<notmodern><div class="tophotspot"></div><header id="header"><div class="topbar-current" title="Open the options menu" onclick="$('#navmenu').toggle();return false"><img src="imgs/icon.png" class="icon"><span class="navlocal">Pokémon Save File Viewer</span></div><ul class="tabs toptab"><li class="first current"><a href="#tab1" id="savetitle">Welcome<div class="tab-preview"></div></a></li><li class=""><a href="#tab2">Soon<div class="tab-preview"></div></a></li><li class=""><a href="#tab3">Soon<div class="tab-preview"></div></a></li><li><a href="#tab4">Soon<div class="tab-preview"></div></a></li><li class="more" title="Add a new tab"><a>+</a></li></ul></header><nav id="navmenu">
 
-<ul class="tabs center"><li class="first current"><a href="#menutab1">Home</a></li><li class=""><a href="#menutab2">Soon</a></li><li class=""><a href="#menutab3">Soon</a></li>
-<li class=""><a href="#menutab4">Soon</a></li></ul>
+<ul class="tabs center"><li class="first current"><a href="#menutab1">Home</a></li><li><a href="#menutab2">Soon</a></li><li><a href="#menutab3">Soon</a></li>
+<li><a href="#menutab4">Soon</a></li></ul>
 <tab id="menutab1" class="tab-content clearfix" style="display: block;">
 <ul>
 <a><li><div><img src="imgs/page.svg"></div><p>Soon</p>
@@ -87,6 +87,7 @@
 <li>Read 6th gen save files</li><li>Can edit save files</li>
 <li>Can uncompress no$gba's compressed save files</li>
 <li>Can compress save files</li>
+<li>On loading, detect platform (browser/operating system) for use <nomodern> elements in <html> only if need</li>
 </ol></div></div></div>
 <div id="about"><div class="return" onclick="$('#about').toggle();return false">Return</div><h1>About</h1><div class="scroller"><ul class="tabs center fixedtab"><li class="first current"><a href="#about-tab_about" id="savetitle">About</a></li><li class=""><a href="#about-tab_credits">Credits</a></li><li class=""><a href="#about-tab_privacy">Privacy Policy</a></li><li class="last"><a href="#about-tab_licenses">Licenses</a></li></ul><tab id="about-tab_about" class="tab-content clearfix" style="display: block;"><h1>Pokémon Save File Viewer</h1><h2>Version: X.X.X.X (Comming soon with Changelog)</h2><span>Created and developed by Lyndon Armitage.</span><br></tab><tab id="about-tab_credits" class="tab-content clearfix" style="display: none;">All sprites, icons or any trademarks presents in this app are property of your respective owners.<h1>GitHub icon</h1><p>GitHub's icon/logo is intectual property of GitHub.</p><h1>Tabs system</h1><p>Tabs menu from kickstart.js, which is part of 99Lime.com HTML KickStart by Joshua Gatcke.</p><h1>The Pokémon Franchise</h1>Pokémon © 2002-2015 Pokémon. © 1995-2015 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.<br></tab>
 <tab id="about-tab_privacy" class="tab-content clearfix" style="display: none;">Because this app will use cookies/local storage in future, an Privacy Policy will be needed. Comming soon!</tab>

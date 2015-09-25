@@ -300,6 +300,7 @@ ul.tabs li {
 	list-style-type: none;
 	margin: 0 -2px 0 0;
 	padding: 0;
+	-webkit-filter: opacity(0.5);
 	display: inline-block;
 	position: relative;
 	top: 0;
@@ -307,10 +308,18 @@ ul.tabs li {
 	zoom: 1;
 }
 
+ul.tabs li:hover {
+	-webkit-filter: opacity(0.5);
+	color: #3350B3;
+}
+
+ul.tabs li.current {
+    -webkit-filter: opacity(1.0)
+}
+
 ul.tabs li a {
 	text-decoration: none;
 	color: rgba(0, 0, 255, 0.5);
-	-webkit-filter: opacity(0.5);
 	display: inline-block;
 	padding: 9px 15px;
 	position: relative;
@@ -323,8 +332,6 @@ ul.tabs li a {
 }
 
 ul.tabs li a:hover {
-	-webkit-filter: opacity(0.5);
-	color: #3350B3;
 	border-bottom: 3px solid #3350B3;
 }
 
@@ -335,7 +342,6 @@ ul.tabs li.current a {
 	-moz-box-shadow: none;
 	box-shadow: none;
 	color: #3350B3;
-	-webkit-filter: opacity(1.0);
 	border-bottom: 3px solid #3350B3;
 	font-weight: bold;
 }
@@ -396,24 +402,54 @@ ul.tabs.toptab {
 	top: -27px;
 	left: 0;
 }
+ul.tabs.toptab li {
+	border-top: 1px outset #3350B3;
+	border-bottom: 1px outset #3350B3;
+	border-left: 1px outset #3350B3;
+	border-right: 1px outset #3350B3;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+ul.tabs.toptab li:hover {
+	-webkit-filter: opacity(0.8);
+}
+ul.tabs.toptab li a {
+	border-bottom: none!important;
+	text-align: center;
+}
 ul.tabs li.more {
 	position: fixed !important;
 	left: initial !important;
 	right: 0px !important;
-	display: flex !important;
+	border-top: none;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+	margin: 0;
 }
+ul.tabs li.more:hover {
+	-webkit-filter: opacity(0.5);
+}
+
 ul.tabs li.more a {
 	padding-top: 14px;
 	font-size: 40px;
 	border-bottom-left-radius: 5px;
 }
 ul.tabs li.more a:hover {
-	border-bottom: none;
 	background: #fff;
 }
 ul.tabs li.more a:active {
 	border-left: 1px solid;
-	border-bottom: 1px solid;
+	border-bottom: 1px solid !important;
+}
+ul.tabs li.current:hover {
+	-webkit-filter: opacity(1.0);
+}
+.tab-preview {
+	width: 102px;
+	height: 102px;
+	border: 1px outset #3350B3;
 }
 .return {
 	float: none;
