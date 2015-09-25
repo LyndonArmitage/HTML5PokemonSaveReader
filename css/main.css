@@ -344,6 +344,13 @@ ul.tabs li.current a:hover {
 	-webkit-filter: opacity(1.0);
 }
 
+ul.tabs li.more a {
+	cursor: pointer;
+	font-size: 24px;
+	line-height: 0;
+	padding-bottom: 19px;
+}
+
 ul.tabs.toptab {
 	margin-top: 27px;
 	border: none;
