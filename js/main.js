@@ -118,7 +118,7 @@ function readFile(savefile) {
 					resultsContents += "</li>";
 				}
 				addPokemonList("Party Pok&#233;mon", results.partyList);
-							resultsContents += "</tab><tab id='tab-pokemons_pc' class='tab-content clearfix' style='display: none;'>";
+							resultsContents += "</tab><tab id='tab-pokemons_pc' class='tab-content clearfix' style='display: none;'><li><b>Current PC Box:</b> " + results.currentPCBox + "</li>";
 				addPokemonList("Current Box Pok&#233;mon", results.currentBoxList);
 
 							resultsContents += "</tab></tab><tab id='tabc4' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-pokedex_all'>All</a></li><li class=''><a href='#tab-pokedex_seen'>Seen</a></li><li class=''><a href='#tab-pokedex_owned'>Owned</a></li></ul>";
