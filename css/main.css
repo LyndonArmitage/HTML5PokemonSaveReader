@@ -388,10 +388,49 @@ modern {
 }
 
 @media(max-width:480px) {
+header {
+	height: 48px!important;
+}
+
+.topbar-current {
+	width: 278px;
+	height: 48px;
+}
+
+.icon {
+	width: 25px;
+	height: 25px;
+	top: 12px;
+	left: 15px;
+}
+
+.navlocal {
+	top: 11px;
+	margin-left: 45px;
+	font-size: 18px;
+}
+
+.tabs-button {
+	color: #3350B3;
+	font-size: 28px;
+	border-left: 1px solid;
+	width: 46px;
+	height: 48px;
+	line-height: 1.8;
+	text-align: center;
+	float: right;
+}
+
+.tabs-button:hover {
+	background: rgba(51, 51, 51, 0.5);
+}
+
 #navmenu {
+	top: 48px;
 	width: 100%;
 	height: 100%;
 }
+
 ul.tabs#toptab {
 	display: none;
 	width: 100%;
