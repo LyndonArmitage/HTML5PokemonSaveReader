@@ -72,6 +72,10 @@ header:hover {
 	font-size: 18px;
 }
 
+.tabs-button {
+	display: none;
+}
+
 #navmenu {
 	width: 298px;
 	border-bottom: 1px solid;
@@ -419,6 +423,7 @@ header {
 	line-height: 1.8;
 	text-align: center;
 	float: right;
+	display: initial;
 }
 
 .tabs-button:hover {
