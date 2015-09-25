@@ -357,7 +357,7 @@ ul.tabs li.more a {
 	padding-bottom: 19px;
 }
 
-ul.tabs.toptab {
+ul.tabs#toptab {
 	margin-top: 27px;
 	border: none;
 	float: none;
@@ -392,7 +392,7 @@ modern {
 	width: 100%;
 	height: 100%;
 }
-ul.tabs.toptab {
+ul.tabs#toptab {
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -402,7 +402,7 @@ ul.tabs.toptab {
 	top: -27px;
 	left: 0;
 }
-ul.tabs.toptab li {
+ul.tabs#toptab li {
 	border-top: 1px outset #3350B3;
 	border-bottom: 1px outset #3350B3;
 	border-left: 1px outset #3350B3;
@@ -410,14 +410,14 @@ ul.tabs.toptab li {
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
-ul.tabs.toptab li:hover {
+ul.tabs#toptab li:hover {
 	-webkit-filter: opacity(0.8);
 }
-ul.tabs.toptab li a {
+ul.tabs#toptab li a {
 	border-bottom: none!important;
 	text-align: center;
 }
-ul.tabs li.more {
+ul.tabs#toptab li.more {
 	position: fixed !important;
 	left: initial !important;
 	right: 0px !important;
@@ -427,19 +427,19 @@ ul.tabs li.more {
 	border-right: none;
 	margin: 0;
 }
-ul.tabs li.more:hover {
+ul.tabs#toptab li.more:hover {
 	-webkit-filter: opacity(0.5);
 }
 
-ul.tabs li.more a {
+ul.tabs#toptab li.more a {
 	padding-top: 14px;
 	font-size: 40px;
 	border-bottom-left-radius: 5px;
 }
-ul.tabs li.more a:hover {
+ul.tabs#toptab li.more a:hover {
 	background: #fff;
 }
-ul.tabs li.more a:active {
+ul.tabs#toptab li.more a:active {
 	border-left: 1px solid;
 	border-bottom: 1px solid !important;
 }
