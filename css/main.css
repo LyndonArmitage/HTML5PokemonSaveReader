@@ -17,6 +17,19 @@ body {
 	cursor: default;
 }
 
+.tophotspot {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	z-index: 2;
+}
+
+.tophotspot:hover + header, header:hover {
+    visibility: visible;
+}
+
 header {
 	background: rgb(255, 220, 30);
 	position: fixed;
