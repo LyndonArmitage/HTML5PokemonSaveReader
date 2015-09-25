@@ -416,6 +416,7 @@ ul.tabs#toptab li:hover {
 ul.tabs#toptab li a {
 	border-bottom: none!important;
 	text-align: center;
+	padding-top: 3px;
 }
 ul.tabs#toptab li.more {
 	position: fixed !important;
@@ -450,6 +451,7 @@ ul.tabs li.current:hover {
 	width: 102px;
 	height: 102px;
 	border: 1px outset #3350B3;
+	margin-bottom: 6px;
 }
 .return {
 	float: none;
