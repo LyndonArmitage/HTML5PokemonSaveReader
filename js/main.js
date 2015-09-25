@@ -43,7 +43,7 @@ String.prototype.endsWith = function(suffix) {
 
 function error(msg) {
 	$("#outputSection").html("<div id='error'>"+msg+"</div><div id='inputSection'><span id='inputLabel' title='Browse here your computer for search the Save File you need read' class='btn center-btn'>Select another Save File</span><div class='upload-divisory'></div><div class='dragndrop-text'>or drag and drop here.</div><!--<div id='saveButton' class='btn'>Save Out File</div>--><input type='file' id='fileInput' name='savefile' style='display:none'></div>");
-	$("#button-tab1").html("<a href='#tab1' style='color:red;border-color:red'>Error!<div class='tab-preview' style='border-color:red'><span>"+msg+"</span></div></a>");
+	$("#button-tab1").html("<a href='#tab1' title='"+msg+"' style='color:red;border-color:red'>Error!<div class='tab-preview' style='border-color:red'><span>"+msg+"</span></div></a>");
 }
 
 function readFile(savefile) {
@@ -59,7 +59,7 @@ function readFile(savefile) {
 			}
 			else {
 				console.log(results);
-				$("#button-tab1").html("<a href='#tab1'>"+ theFile.name +"<div class='tab-preview'><p>"+ results.trainerName +" | "+ results.trainerID +"</p><p>Time: "+ results.timePlayed.hours +":"+ results.timePlayed.minutes +":"+ results.timePlayed.seconds +"</p><p>$"+ results.money +"</p><p>Rival: "+ results.rivalName +"</p><p>Checksum: "+ results.checksum +"</p></div></a>");
+				$("#button-tab1").html("<a href='#tab1' title='Trainer: "+ results.trainerName +" | "+ results.trainerID +"; Play Time: "+ results.timePlayed.hours +":"+ results.timePlayed.minutes +":"+ results.timePlayed.seconds +"; Money: "+ results.money +"; Rival: "+ results.rivalName +"; Checksum: "+ results.checksum +"'>"+ theFile.name +"<div class='tab-preview'><p>"+ results.trainerName +" | "+ results.trainerID +"</p><p>Time: "+ results.timePlayed.hours +":"+ results.timePlayed.minutes +":"+ results.timePlayed.seconds +"</p><p>$"+ results.money +"</p><p>Rival: "+ results.rivalName +"</p><p>Checksum: "+ results.checksum +"</p></div></a>");
 				var resultsContents = "<ul class='tabs center'><li class='first current'><a href='#tabc1'>Trainer</a></li><li class=''><a href='#tabc2'>Items</a></li><li class=''><a href='#tabc3'>Pokémons</a></li><li class='last'><a href='#tabc4'>Pokédex</a></li></ul><ul id='results'>"+
 						"<tab id='tabc1' class='tab-content clearfix' style='display: block;'><ul class='tabs center'><li class='first current'><a href='#tab-trainer_info'>Info</a></li><li class=''><a href='#tab-trainer_badges'>Badges</a></li></ul><tab id='tab-trainer_info' class='tab-content clearfix' style='display: inline;'><li><b>Trainer Name:</b> " + results.trainerName + "</li>"+
 						"<li><b>Trainer ID:</b> " + results.trainerID + "</li>"+
