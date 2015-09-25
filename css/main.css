@@ -145,24 +145,27 @@ header:hover {
 
 .btn {
 	padding: 10px;
+	color: #3350B3;
 	border: #3350B3 outset 2px;
 	text-align: center;
 	border-radius: 10px;
 	cursor: pointer;
 }
 
-.btn:active {
-	border: #000000 inset 2px;
+.btn:hover {
+	color: #7A8FDA;
+	border: 2px outset #7A8FDA;
 }
 
-#inputLabel {
-	color: #3350B3;
-	display: inline-block;
+.btn:active {
+	color: #A7B5E8;
+	border: 2px outset #A7B5E8;
 }
 
 .center-btn {
 	left: 560px;
 	padding: 40px 40px 40px 40px;
+	display: inline-block;
 }
 
 .left-btn {
