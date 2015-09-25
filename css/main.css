@@ -141,6 +141,11 @@ header:hover {
 	display: flex;
 }
 
+body > .scroller {
+	top: 60px;
+	height: calc(100% - 60px);
+}
+
 #inputSection {
 	margin: 10px auto;
 	width: 240px;
@@ -481,25 +486,36 @@ ul.tabs#toptab li.more a {
 	font-size: 40px;
 	border-bottom-left-radius: 5px;
 }
+
 ul.tabs#toptab li.more a:hover {
 	background: #fff;
 }
+
 ul.tabs#toptab li.more a:active {
 	border-left: 1px solid;
 	border-bottom: 1px solid !important;
 }
+
 ul.tabs li.current:hover {
 	-webkit-filter: opacity(1.0);
 }
+
 .tab-preview {
 	width: 102px;
 	height: 102px;
 	border: 1px outset #3350B3;
 	margin-bottom: 6px;
 }
+
+body > .scroller {
+	top: 49px;
+	height: calc(100% - 49px);
+}
+
 .return {
 	float: none;
 }
+
 .scroller {
 	height: calc(100% - 142px);
 	top: 142px;
