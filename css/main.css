@@ -388,12 +388,32 @@ modern {
 }
 ul.tabs.toptab {
 	display: none;
+	width: 100%;
+	height: 100%;
+	background: rgb(255, 220, 30);
+	padding: 40px 10px 0px 10px;
 	position: fixed;
 	top: -27px;
 	left: 0;
-	background: rgb(255, 220, 30);
-	width: 100%;
-	height: 100%;
+}
+ul.tabs li.more {
+	position: fixed !important;
+	left: initial !important;
+	right: 0px !important;
+	display: flex !important;
+}
+ul.tabs li.more a {
+	padding-top: 14px;
+	font-size: 40px;
+	border-bottom-left-radius: 5px;
+}
+ul.tabs li.more a:hover {
+	border-bottom: none;
+	background: #fff;
+}
+ul.tabs li.more a:active {
+	border-left: 1px solid;
+	border-bottom: 1px solid;
 }
 .return {
 	float: none;
