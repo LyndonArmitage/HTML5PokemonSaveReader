@@ -315,6 +315,7 @@ ul.tabs li {
 	top: 0;
 	left: 0;
 	zoom: 1;
+	-webkit-user-drag: element;
 }
 
 ul.tabs li:hover {
@@ -338,6 +339,7 @@ ul.tabs li a {
 	border-bottom: 0;
 	font-size: 0.9em;
 	zoom: 1;
+	-webkit-user-drag: none;
 }
 
 ul.tabs li a:hover {
