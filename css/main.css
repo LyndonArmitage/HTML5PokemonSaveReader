@@ -369,6 +369,7 @@ ul.tabs li.current a:hover {
 
 .tab-preview {
 	visibility: hidden;
+	position: absolute; /*-- This need to be relative to each tab, and at same time absolute --*/
 }
 
 .tab-preview p {
@@ -541,6 +542,7 @@ ul.tabs li.current:hover {
 	border: 1px outset #3350B3;
 	margin-bottom: 6px;
 	visibility: visible;
+	position: initial;
 }
 
 body > .scroller {
