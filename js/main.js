@@ -52,7 +52,6 @@ function readFile(savefile) {
 	reader.onload = (function(theFile) {
 		return function(e) {
 			$("#outputSection").html("");
-			$("#savetitle").html(""+ theFile.name +"<div class='tab-preview'></div>");
 			$("#welcome").html("");
 			var results = parseSav(e.target.result);
 			if(results.checksum === 0) {
@@ -60,6 +59,7 @@ function readFile(savefile) {
 			}
 			else {
 				console.log(results);
+				$("#button-tab1").html("<a href='#tab1'>"+ theFile.name +"<div class='tab-preview'><p>"+ results.trainerName +" | "+ results.trainerID +"</p><p>Time: "+ results.timePlayed.hours +":"+ results.timePlayed.minutes +":"+ results.timePlayed.seconds +"</p><p>$"+ results.money +"</p><p>Rival: "+ results.rivalName +"</p><p>Checksum: "+ results.checksum +"</p></div></a>");
 				var resultsContents = "<ul class='tabs center'><li class='first current'><a href='#tabc1'>Trainer</a></li><li class=''><a href='#tabc2'>Items</a></li><li class=''><a href='#tabc3'>Pokémons</a></li><li class='last'><a href='#tabc4'>Pokédex</a></li></ul><ul id='results'>"+
 						"<tab id='tabc1' class='tab-content clearfix' style='display: block;'><ul class='tabs center'><li class='first current'><a href='#tab-trainer_info'>Info</a></li><li class=''><a href='#tab-trainer_badges'>Badges</a></li></ul><tab id='tab-trainer_info' class='tab-content clearfix' style='display: inline;'><li><b>Trainer Name:</b> " + results.trainerName + "</li>"+
 						"<li><b>Trainer ID:</b> " + results.trainerID + "</li>"+
