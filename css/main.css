@@ -78,6 +78,7 @@ header:hover {
 
 #navmenu {
 	min-width: 298px;
+	max-height: 100%;
 	color: #3350B3;
 	border-bottom: 1px solid;
 	border-right: 1px solid;
