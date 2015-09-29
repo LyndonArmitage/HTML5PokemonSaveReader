@@ -77,7 +77,8 @@ header:hover {
 }
 
 #navmenu {
-	width: 298px;
+	min-width: 298px;
+	color: #3350B3;
 	border-bottom: 1px solid;
 	border-right: 1px solid;
 	background: rgb(255, 220, 30);
@@ -140,6 +141,10 @@ header:hover {
 	align-items: center;
 	display: flex;
 }
+
+#navmenu h1{font-size:18px}
+#navmenu h2{font-size:13px}
+#navmenu span{font-size:12px}
 
 body > .scroller {
 	top: 60px;
@@ -323,6 +328,9 @@ ul.tabs li {
 	zoom: 1;
 	-webkit-user-drag: element;
 }
+
+ul.tabs li.first{margin-left:12px}
+ul.tabs li.last{margin-right:12px}
 
 ul.tabs li:hover {
 	-webkit-filter: opacity(0.5);
