@@ -66,8 +66,9 @@ function readFile(savefile) {
 						"<li><b>Rival Name:</b> " + results.rivalName + "</li>"+
 						"<li><b>Time Played:</b> " + results.timePlayed.hours +":"+ results.timePlayed.minutes + ":" + results.timePlayed.seconds + "</li>"+
 						"<li><b>Money:</b> " + results.money + "</li>"+
+						"<li><b>Coins:</b> " + results.coins + "</li>"+
 						"<li><b>Checksum:</b> " + results.checksum + "</li>"+
-						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li><span>Soon, you'll can get the coins stored in your coin case.</span></tab><tab id='tab-trainer_badges' class='tab-content clearfix' style='display: none;'><center>Comming soon!</center></tab></tab><tab id='tabc2' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-items_bag'>Bag</a></li><li class=''><a href='#tab-items_pc'>PC</a></li></ul>";
+						"<li><b>Current PC Box:</b> " + results.currentPCBox + "</li></tab><tab id='tab-trainer_badges' class='tab-content clearfix' style='display: none;'><center>Comming soon!</center></tab></tab><tab id='tabc2' class='tab-content clearfix' style='display: none;'><ul class='tabs center'><li class='first current'><a href='#tab-items_bag'>Bag</a></li><li class=''><a href='#tab-items_pc'>PC</a></li></ul>";
 
 				function addItemList(label, items) {
 					if(items.count > 0) {

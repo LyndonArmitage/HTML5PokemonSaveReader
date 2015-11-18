@@ -85,6 +85,32 @@ function parseSav(data) {
 		return out;
 	}
 
+	function getCasinoCoins() {
+		// makes use of packed BCD
+		// Represents how much coins the character has.
+		// The figure is a 4-digit number, 2 digits per byte, encoded as binary-coded decimal,
+		// where each digit is allocated a full 4 bits.
+		var offset = 0x2850;
+		var size = 2; // 3 bytes because each digit comes from a nibble
+		var out = "";
+		var shouldAdd = false;
+		for(var i = 0; i < size; i ++) {
+			var byteVal = data.charCodeAt(offset+i);
+			var digit1 = byteVal >> 4;
+			var digit2 = byteVal & 0xF;
+			// Check if we should add 0s (for middle of number)
+			if(shouldAdd || digit1 > 0) {
+				out += digit1;
+				shouldAdd = true;
+			}
+			if(shouldAdd || digit2 > 0) {
+				out += digit2;
+				shouldAdd = true;
+			}
+		}
+		return out;
+	}
+
 	function getCurrentPCBox() {
 		return lowNibble(hex2int(0x284C, 1)) + 1;
 	}
@@ -535,6 +561,7 @@ function parseSav(data) {
 		PCItemList : getPCItemList(),
 		checksum : getChecksum(),
 		money : getMoney(),
+		coins : getCasinoCoins(),
 		currentPCBox : getCurrentPCBox(),
 		seenList : getSeenList(),
 		ownedList : getOwnedList(),
