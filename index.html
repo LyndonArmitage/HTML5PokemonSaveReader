@@ -1,28 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTML5 Pok&#233;mon Save File Viewer</title>
-	<link href='http://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+	<link rel="icon" href="imgs/icon.png" />
+	<title>Pok&#233;mon Save File Viewer</title>
 	<link type="text/css" href="css/main.css" media="all" rel="stylesheet">
 </head>
 <body>
+	<notmodern><div class="tophotspot"></div><header id="header"><div class="topbar-current" title="Open the options menu" onclick="$('#navmenu').toggle();return false"><img src="imgs/icon.png" class="icon"><span class="navlocal">Pokémon Save File Viewer</span></div><div class="tabs-button" title="Manage openned tabs" onclick="$('#toptab').toggle();return false">4</div><ul class="tabs" id="toptab"><h1>Openned tabs</h1><li class="first current" id="button-tab1" onclick="$('#toptab').toggle();return false"><a href="#tab1" title="Welcome! To begin editing, select a Save File">Welcome<div class="tab-preview">To begin editing, select a Save File</div></a></li><li onclick="$('#toptab').toggle();return false"><a href="#tab2">Soon<div class="tab-preview"><b>Multi-tabs system comming soon!</b><span>Soon, we will add a multi-tab system for open multiple savegames!</span></div></div></a></li><li onclick="$('#toptab').toggle();return false"><a href="#tab2">Soon<div class="tab-preview"><b>Multi-tabs system comming soon!</b><span>Soon, we will add a multi-tab system for open multiple savegames!</span></div></div></a></li><li onclick="$('#toptab').toggle();return false"><a href="#tab2">Soon<div class="tab-preview"><b>Multi-tabs system comming soon!</b><span>Soon, we will add a multi-tab system for open multiple savegames!</span></div></div></a></li><li class="more" title="Add a new tab"><a>+</a></li></ul></header>
+<nav id="navmenu">
+<ul class="tabs center"><li class="first current"><a href="#menutab1">File</a></li><li><a href="#menutab2">View</a></li><li><a href="#menutab3">Settings</a></li><li class="last"><a href="#menutab4">About</a></li></ul>
 
-<h1>Pok&#233;mon Save File Viewer</h1>
-<div id="container">
-	<div id="inputSection">
-		<div id='inputLabel' class="btn">Select Save File</div>
+<tab id="menutab1" class="tab-content clearfix" style="display: block;">
+Comming soon!
+</tab>
+
+<tab id="menutab2" class="tab-content clearfix" style="display: none;">
+<ul>
+<a><li title="A list with your most used and your favorite savegames for fast loading your work"><div><img src="imgs/page.svg"></div><p>Favorites (Soon)</p></li></a>
+</ul></tab>
+
+<tab id="menutab3" class="tab-content clearfix" style="display: none;">
+Comming soon!</tab>
+
+<tab id="menutab4" class="tab-content clearfix" style="display: none;">
+<ul>
+<center><h1>Pokémon Save File Viewer</h1><h2>Version: X.X.X.X</h2><span>Created and developed by Lyndon Armitage.</span></center>
+<a><li title="A log containing all changes historic in app and his respective contributors, version number and date"><div><img src="imgs/page.svg"></div><p>Changelog (Soon)</p></li></a><a><li title="A list containing comming features for this app, with user's suggestions" onclick="$('#upcomming').toggle();return false"><div><img src="imgs/page.svg"></div><p>Upcomming features</p></li></a><a><li title="Credits for items used in this app" onclick="$('#credits').toggle();return false"><div><img src="imgs/page.svg"></div><p>Credits</p></li></a><a><li title="Because this app will use cookies/local storage in future, an Privacy Policy will be needed. Comming soon!"><div><img src="imgs/page.svg"></div><p>Privacy Policy (Soon)</p></li></a><a><li title="A tabbed list containing open-source licenses of projects or his portions used here"><div><img src="imgs/page.svg"></div><p>Licenses (Soon)</p></li></a><a><li title="Send your suggestions or report problems"><div><img src="imgs/page.svg"></div><p>Send Feedback (Soon)</p></li></a>
+</ul></tab>
+</nav></notmodern>
+
+	<div class="scroller">
+	<modern id="welcome"><h1>Welcome! To begin editing:</h1></modern>
+	<tab id="tab1" class="tab-content clearfix" style="display: block;">
+	<div id="outputSection" class="outputSection">
+		<notmodern><h2>Welcome! To begin editing:</h2></notmodern>
+		<div id="inputSection">
+		<span id='inputLabel' title='Browse here your computer for search the Save File you need read' class="btn center-btn">Select Save File</span>
+		<div class="upload-divisory"></div>
+		<div class="dragndrop-text">or drag and drop here.</div>
 		<!--<div id='saveButton' class="btn">Save Out File</div>-->
-		<input type='file' id='fileInput' name='savefile' style='display: none'/>
+		<input type='file' id='fileInput' name='savefile' style='display:none'/>
 	</div>
-	<div id="outputSection">
-		<h2>Select a Save File to begin.</h2>
 	</div>
+	</tab>
+<tab id="tab2" class="tab-content clearfix" style="display: none;"><div class="outputSection"><h2>Multi-tabs system comming soon!</h2>Soon, we will add a multi-tab system for open multiple savegames at same time! Produtive! Multi-tasking! Awesome!</div></tab>
+<footer>
+<a href="https://github.com/LyndonArmitage/HTML5PokemonSaveReader" target="blank"><img src="imgs/github.svg" width="40px" height="40px" title="Source-code available on GitHub. You can know first the news and/or improve the project in GitHub" alt="GitHub"></a><br/>Pokémon © 2002-2015 Pokémon. © 1995-2015 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.<br/>All sprites, icons or any trademarks presents in this app are property of your respective owners.
+</footer>
 </div>
-<div id="footer">
-	Source available on <a href="https://github.com/LyndonArmitage/HTML5PokemonSaveReader" target="_blank">GitHub</a>
+<div class="menus"><div id="upcomming"><div class="return" onclick="$('#upcomming').toggle();return false">Return</div><h1>Upcomming features</h1><div class="scroller"><div class="selectible"><ol>
+<li>Can select savegame's lists</li>
+<li>GitHub popunder</li>
+<li>Can create tabs on toptab</li>
+<li>Can remove toptab's tabs</li>
+<li>Splash screen</li>
+<li>Complete pokedex list</li>
+<li>Options viewer</li>
+<li>Can drag n' drop save files</li>
+<li>Drag n' drop animation</li>
+<li>Custom scrollbar for scrollers</li>
+<li>Tabs can have scroll and 100% width on mobile</li>
+<li>Drag n' drop transtion gradient animation</li>
+<li>Themes Default, Light and Dark</li>
+<li>Save app's preferences in local storage</li>
+<li>Dinamic theme (based on game's edition)</li>
+<li>Can get/export save as HTML or plain idented text</li>
+<li>Get badges list</li>
+<li>Can transfer items between Bag/PC</li>
+<li>Read II gen save files</li>
+<li>Read III gen save files</li><li>Can convert pokémons from II gen to III gen</li>
+<li>Show "Lanete's PC" text in "PC" tab if save file is of III gen</li>
+<li>Can export pokémons as .pkm extencion</li><li>In "Pokédex" tab, can mark pokémons as Seen/Owned</li>
+<li>Read save files with multi-tabs navigation</li><li>Read 4th gen save files</li>
+<li>Read 5th gen save files</li>
+<li>Read 6th gen save files</li><li>Can edit save files</li>
+<li>Can uncompress no$gba's compressed save files</li>
+<li>Can compress save files</li>
+<li>On loading, detect platform (browser/operating system) for use <nomodern> elements in html only if need</li>
+<li>Pikachu's friendship animations</li>
+<li>Can drag tab to desktop to save file</li>
+<li>Can drag and drop Save Files to "Openned tabs" menu</li>
+<li>App dialogs</li>
+<li>Can drag and drop Save Files to already used tab and show confirmation dialog</li>
+<li>Can drag and drop tab to another tab to clone Save File</li>
+<li>When openned Save File in another tab, remove welcome message</li>
+<li>All Pokémons/Items/Badges counters</li>
+<li>Scope preview in top tabs</li>
+</ol></div></div></div>
+<div id="licenses"><div class="return" onclick="$('#licenses').toggle();return false">Return</div><h1>Licenses</h1><div class="scroller"><ul class="tabs center fixedtab"><li class="first current"><a href="#licenses-tab1">Soon</a></li></ul><tab id="licenses-tab1" class="tab-content clearfix" style="display: block;">Comming soon!</tab>
+</div></div>
+<div id="credits"><div class="return" onclick="$('#credits').toggle();return false">Return</div><h1>Credits</h1><div class="scroller">All sprites, icons or any trademarks presents in this app are property of its respective owners.<h1>GitHub icon</h1><p>GitHub's icon/logo is intectual property of GitHub © 2015 GitHub, Inc.</p><h1>Tabs system</h1><p>Tabs menu from kickstart.js, which is part of 99Lime.com's HTML KickStart by Joshua Gatcke.</p><h1>The Pokémon Franchise</h1>Pokémon © 2002-2015 Pokémon. © 1995-2015 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.<br/>
+</div></div>
 </div>
-
-<script type="text/javascript" src="js/lib/jquery-2.0.2.min.js"></script>
+<script type="text/javascript" src="js/lib/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/sav_parser.js"></script>
 <script type="text/javascript" src="js/background.js"></script>
 <script type="text/javascript" src="js/main.js"></script>

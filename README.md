@@ -1,4 +1,4 @@
-# Readme for Pok&#233;mon Save File Reader #
+﻿# Readme for Pok&#233;mon Save File Reader #
 
 by Lyndon Armitage
 

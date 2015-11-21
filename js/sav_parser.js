@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 JavaScript Based Pokemon Save File viewer by Lyndon Armitage 2013
 ---
@@ -11,7 +11,7 @@ This will make use of HTML5's File API so will not work in older browsers.
  * Will Take in a binary string and return an object representing the save data gleamed from it.<br/>
  * Currently only supports Generation 1 save files (Yellow, Red and Blue)
  * @param data
- * @returns {{trainerName: *, rivalName: *, trainerID: *, timePlayed: *, pocketItemList: *, PCItemList: *, checksum: *}}
+ * @returns {{trainerName: *, rivalName: *, trainerID: *, timePlayed: *, bagItemList: *, PCItemList: *, checksum: *}}
  */
 function parseSav(data) {
 	// lets test getting the trainer name data
@@ -44,7 +44,7 @@ function parseSav(data) {
 		};
 	}
 
-	function getPocketItemList() {
+	function getBagItemList() {
 		// Can hold 20 items making the size 42 because: Capacity * 2 + 2 = 42
 		return getItemList(0x25C9, 20);
 	}
@@ -66,6 +66,32 @@ function parseSav(data) {
 		// where each digit is allocated a full 4 bits.
 		var offset = 0x25F3;
 		var size = 3; // 3 bytes because each digit comes from a nibble
+		var out = "";
+		var shouldAdd = false;
+		for(var i = 0; i < size; i ++) {
+			var byteVal = data.charCodeAt(offset+i);
+			var digit1 = byteVal >> 4;
+			var digit2 = byteVal & 0xF;
+			// Check if we should add 0s (for middle of number)
+			if(shouldAdd || digit1 > 0) {
+				out += digit1;
+				shouldAdd = true;
+			}
+			if(shouldAdd || digit2 > 0) {
+				out += digit2;
+				shouldAdd = true;
+			}
+		}
+		return out;
+	}
+
+	function getCasinoCoins() {
+		// makes use of packed BCD
+		// Represents how much coins the character has.
+		// The figure is a 4-digit number, 2 digits per byte, encoded as binary-coded decimal,
+		// where each digit is allocated a full 4 bits.
+		var offset = 0x2850;
+		var size = 2; // 3 bytes because each digit comes from a nibble
 		var out = "";
 		var shouldAdd = false;
 		for(var i = 0; i < size; i ++) {
@@ -531,10 +557,11 @@ function parseSav(data) {
 		rivalName: getRivalName(),
 		trainerID: getTrainerID(),
 		timePlayed : getTimePlayed(),
-		pocketItemList : getPocketItemList(),
+		bagItemList : getBagItemList(),
 		PCItemList : getPCItemList(),
 		checksum : getChecksum(),
 		money : getMoney(),
+		coins : getCasinoCoins(),
 		currentPCBox : getCurrentPCBox(),
 		seenList : getSeenList(),
 		ownedList : getOwnedList(),
