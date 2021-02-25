@@ -6,6 +6,9 @@ by Lyndon Armitage
 This is a HTML5 implementation of a Pok&#233;mon Red, Blue and Yellow save game viewer (and possibly editor in the future).
 Made for fun, and educational purposes only.
 
+You can see it in action here: 
+[lyndon.codes/assets/html5-pokemon-save-reader/](https://lyndon.codes/assets/html5-pokemon-save-reader/)
+
 ## Current Version: ##
 
 Currently in the very early stages of development.
