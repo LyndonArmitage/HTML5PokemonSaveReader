@@ -9,6 +9,9 @@ Made for fun, and educational purposes only.
 You can see it in action here: 
 [lyndon.codes/assets/html5-pokemon-save-reader/](https://lyndon.codes/assets/html5-pokemon-save-reader/)
 
+There is a more maintained fork of this project by [Daniell Mesquita](https://github.com/DaniellMesquita) that can be seen here:
+[github.com/Universav/UniversavPoke](https://github.com/Universav/UniversavPoke)
+
 ## Current Version: ##
 
 Currently in the very early stages of development.
